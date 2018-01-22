@@ -40,9 +40,9 @@ Elements of the architecture:
 ## Running the app
 This app is an amalgamation of the nodejs-docs-hello-world Azure sample repo and the 
 azure-cosmos-db-documentdb-nodejs-getting-started Azure sample repo, provided on the Azure docs website. 
-1. Clone this repository using `git clone https://manicennui@reviewappprecocity.scm.azurewebsites.net/reviewAppPrecocity.git`
+1. Clone this repository using `git clone https://github.com/precocity/retail-workshop.git`
 
-2. Change directories to the repo using `cd nodejs-docs-hello-world`
+2. Change directories to the repo using `cd retail-workshop`
 
 3. Next, substitute the endpoint and primary key in `config.js` with your Cosmos DB account's values.
 Substitute the database and collection.
@@ -74,13 +74,8 @@ Edit the host variable in server.js.
  
 7. Run `node server.js` in a terminal to start your start your node application.
 
-8. Visit the site using a web browser and the URL e.g. http://www.yourdomain.com:{port}?asin={product ID}
-The default port is 8080, and one product ID is B0002GXV3A.
-
-## Changing the repository
-To make changes, commit them locally, then run
-	git remote add azure https://manicennui@reviewappprecocity.scm.azurewebsites.net/reviewAppPrecocity.git
-	git push azure master
+8. Visit the site using a web browser and the URL e.g. http://www.yourdomain.com:{port}
+The default port is 8080.
 
 ## More information
 
