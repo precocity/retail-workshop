@@ -1,0 +1,179 @@
+body {
+	width: 100%; 
+	height: 100%; 
+	overflow: hidden;
+	padding: 10px;
+}
+
+.fullWidth {
+	width: 100%;
+}
+
+
+.title {
+	font-size: 20px;
+	font-weight: bold;
+}
+
+#instructions {
+	font-size: 16px;
+font-style: italic;
+padding-bottom: 14px;
+}
+
+#productEnter {
+	position: absolute;
+top: 50px;
+left: 360px;
+}
+
+#productIdLabel {
+	padding-left: 40px;
+}
+
+#asinForm {
+	position: absolute;
+top: 0px;
+left: 290px;
+}
+
+#asinSubmit {
+	position: absolute;
+}
+
+#sort {
+	position:absolute ;
+right: 200px;
+}
+
+span#refresh {
+	right: 20px;
+	background: #0FF;
+	position: absolute;
+}
+
+div.reviewer {
+	position: relative;
+}
+
+div#product {
+	padding-top: 10px;
+}
+
+div#reviews {
+	width: 96%;
+	border: 1px black solid;
+	padding: 3px;
+	height: 400px;
+	overflow: auto;
+	margin: 10px 0 20px 0;
+}
+
+span.icon {
+  background: url(/images/person-1824147_960_720.png);
+  background-size: 20px 20px;
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+}
+
+span.star.filled {
+  background: url(/images/star-filled.png);
+  background-size: 20px 20px;
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+}
+
+span.star.empty {
+  background: url(/images/star-empty.png);
+  background-size: 18px 18px;
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+}
+
+div.reviewSummary {
+	padding: 5px 0;
+}
+
+span.reviewerName {
+  padding-left: 20px;
+  position: absolute;
+  top: 2px;
+}
+
+span.stars {
+	
+}
+
+span.summary {
+  padding-left: 20px;
+  font-weight: bold;	
+}
+
+div.reviewSummary {
+	padding: 5px 0;
+}
+
+div.reviewHelpful {
+	padding: 5px 0 18px 0;
+}
+
+.helpfulnessRating {
+	padding-left: 20px;
+}
+
+div.tableHeader {
+	width: 100%;
+	border-bottom: 2px solid black;
+}
+
+span.votes {
+	width: 100px;
+	display: inline-block;
+}
+
+span.vote {
+	width: 50px;
+	display: inline-block;
+	text-align: center;
+	margin-left: 10px;
+}
+
+.button {
+	cursor: pointer;
+	border: 1px solid gray;
+	padding: 1px 5px;
+}
+
+span.vote.up {
+	
+}
+
+span.vote.down {
+	
+}
+
+span.smallNumber {
+	width: 100px;
+	display:inline-block;
+	text-align: center;
+}
+
+span.reviewer {
+	width: 100%;
+}
+
+div.row.header {
+	background: #ddd;
+}
+
+div.row.detail div.row.summary {
+	width: 100%;
+}
+
+div.row.detail {
+	margin-bottom: 5px; 
+}
+
