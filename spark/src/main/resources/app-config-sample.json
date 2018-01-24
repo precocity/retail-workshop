@@ -1,0 +1,27 @@
+{
+  "spark": {
+    "progressDir": "wasb://<container>@<storage-acc>.blob.core.windows.net/",
+    "checkpointDir": "wasb://<container>@<storage-acc>.blob.core.windows.net/",
+    "batchDurationSec": 20,
+    "checkpointIntervalSec": 20,
+    "modelPath": "wasb://<container>@<storage-acc>.blob.core.windows.net/<model-dir>",
+    "rawReviewFiles": ["wasb://<container>@<storage-acc>.blob.core.windows.net/reviews_Electronics_5.json"]
+  },
+  "eventHubs": {
+    "policyName": "RootManageSharedAccessKey",
+    "policyKey": "<policy-key>",
+    "namespace": "<eventhubs-namespace>",
+    "name": "<name>",
+    "partitions": "2",
+    "consumerGroup": "$Default",
+    "maxRate": "10"
+  },
+  "cosmosDB": {
+    "endpoint": "https://<cosmosdb-account-name>.documents.azure.com:443/",
+    "masterKey": "<master-key>",
+    "database": "<database-name>",
+    "preferredRegions": "East US2;Central US;",
+    "collectionName": "<collection-name>",
+    "writingBatchSize": "100"
+  }
+}
