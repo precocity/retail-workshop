@@ -48,7 +48,8 @@ Sample application configuration JSON file `application-config-sample.json` is p
 4. `joda-time:joda-time:2.9.9`
 
 #### Spark Commands:
+_Note: Be sure to update `<container>` and `<storage-acc>` in the below commands appropriately._
 ##### Batch Job:
-`/usr/lib/spark/bin/spark-submit --class com.precocityllc.qubole.app.ScoreAll --packages com.microsoft.azure:azure-eventhubs:0.15.1,com.microsoft.azure:azure-eventhubs-spark_2.11:2.1.6,com.microsoft.azure:azure-cosmosdb-spark_2.1.0_2.11:1.0.0,joda-time:joda-time:2.9.9 --conf spark.executor.instances=4 --conf spark.executor.memory=4196M wasb://spark@precocityquboleout.blob.core.windows.net/azure-spark-streaming-1.0.jar`
+`/usr/lib/spark/bin/spark-submit --class com.precocity.retail.workshop.app.ScoringApp --packages com.microsoft.azure:azure-eventhubs:0.15.1,com.microsoft.azure:azure-eventhubs-spark_2.11:2.1.6,com.microsoft.azure:azure-cosmosdb-spark_2.1.0_2.11:1.0.0,joda-time:joda-time:2.9.9 --conf spark.executor.instances=4 --conf spark.executor.memory=20g wasb://<container>@<storage-acc>.blob.core.windows.net/retail-workshop-1.0.jar wasb://<container>@<storage-acc>.blob.core.windows.net/score-application-config.json`
 ##### Streaming Job:
-`/usr/lib/spark/bin/spark-submit --class com.precocityllc.qubole.app.StreamingApp --packages com.microsoft.azure:azure-eventhubs:0.15.1,com.microsoft.azure:azure-eventhubs-spark_2.11:2.1.6,com.microsoft.azure:azure-cosmosdb-spark_2.1.0_2.11:1.0.0,joda-time:joda-time:2.9.9 wasb://spark@precocityquboleout.blob.core.windows.net/azure-spark-streaming-1.0.jar`
+`/usr/lib/spark/bin/spark-submit --class com.precocity.retail.workshop.app.StreamingApp --packages com.microsoft.azure:azure-eventhubs:0.15.1,com.microsoft.azure:azure-eventhubs-spark_2.11:2.1.6,com.microsoft.azure:azure-cosmosdb-spark_2.1.0_2.11:1.0.0,joda-time:joda-time:2.9.9 wasb://<container>@<storage-acc>.blob.core.windows.net/retail-workshop-1.0.jar wasb://<container>@<storage-acc>.blob.core.windows.net/application-config.json`
