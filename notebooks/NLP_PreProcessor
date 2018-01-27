@@ -1,9 +1,9 @@
 {
   "paragraphs": [
     {
-      "text": "%md\n# Natural Language Processing \u0026 ML Pipeline\nThis notebook implements the Azure Blob ingestion \u0026 NLP pipeline components of batch pipeline, steps 1-4.  Step 5 is implemented in a the ML_Training notebook\n![Image](https://precocityquboleout.blob.core.windows.net/images/Screen%20Shot%202018-01-25%20at%201.05.00%20PM.png)\n",
+      "text": "%md\n# Natural Language Processing \u0026 ML Pipeline\nThis notebook implements \u0026 explains the Azure Blob ingestion \u0026 NLP pipeline components of batch pipeline, steps 1-4.  Step 5 is implemented in a the ML_Training notebook\n![Image](https://precocityquboleout.blob.core.windows.net/images/Screen%20Shot%202018-01-25%20at%201.05.00%20PM.png)\n",
       "user": "davidgillen@precocityllc.com",
-      "dateUpdated": "Jan 25, 2018 7:07:36 PM",
+      "dateUpdated": "Jan 27, 2018 11:20:48 AM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -17,7 +17,8 @@
         },
         "enabled": true,
         "editorMode": "ace/mode/markdown",
-        "editorHide": true
+        "editorHide": true,
+        "tableHide": false
       },
       "settings": {
         "params": {},
@@ -28,18 +29,18 @@
       "result": {
         "code": "SUCCESS",
         "type": "HTML",
-        "msg": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch1\u003eNatural Language Processing \u0026amp; ML Pipeline\u003c/h1\u003e\n\u003cp\u003eThis notebook implements the Azure Blob ingestion \u0026amp; NLP pipeline components of batch pipeline, steps 1-4. Step 5 is implemented in a the ML_Training notebook\u003cbr/\u003e\u003cimg src\u003d\"https://precocityquboleout.blob.core.windows.net/images/Screen%20Shot%202018-01-25%20at%201.05.00%20PM.png\" alt\u003d\"Image\" /\u003e\u003c/p\u003e\n\u003c/div\u003e"
+        "msg": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch1\u003eNatural Language Processing \u0026amp; ML Pipeline\u003c/h1\u003e\n\u003cp\u003eThis notebook implements \u0026amp; explains the Azure Blob ingestion \u0026amp; NLP pipeline components of batch pipeline, steps 1-4. Step 5 is implemented in a the ML_Training notebook\u003cbr/\u003e\u003cimg src\u003d\"https://precocityquboleout.blob.core.windows.net/images/Screen%20Shot%202018-01-25%20at%201.05.00%20PM.png\" alt\u003d\"Image\" /\u003e\u003c/p\u003e\n\u003c/div\u003e"
       },
       "dateCreated": "Jan 25, 2018 6:37:20 PM",
-      "dateStarted": "Jan 25, 2018 7:07:29 PM",
-      "dateFinished": "Jan 25, 2018 7:07:29 PM",
+      "dateStarted": "Jan 25, 2018 7:44:29 PM",
+      "dateFinished": "Jan 25, 2018 7:44:29 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "import scala.collection.mutable.ListBuffer\nimport org.apache.spark.sql._\nimport org.apache.spark.ml.feature.{RegexTokenizer, Tokenizer}\nimport org.apache.spark.sql.functions._\nimport org.apache.spark.ml.feature.StopWordsRemover\nimport scala.collection.mutable.WrappedArray\n//import org.apache.spark.ml.feature.{HashingTF, IDF}\n//import org.apache.spark.ml.feature.NGram\nimport org.apache.spark.ml.feature._\nimport org.apache.spark.ml.Pipeline\nimport org.apache.spark.ml.classification.LogisticRegression\nimport org.apache.spark.ml.evaluation.BinaryClassificationEvaluator\nimport org.apache.spark.ml.feature.{HashingTF, Tokenizer}\nimport org.apache.spark.ml.linalg.Vector\nimport org.apache.spark.ml.tuning.{CrossValidator, ParamGridBuilder}\nimport org.apache.spark.sql.Row\nimport org.apache.spark.ml.feature.QuantileDiscretizer\nimport org.apache.spark.ml.feature.Bucketizer\nimport org.apache.spark.ml.linalg._\nimport org.apache.spark.mllib.linalg.distributed._",
+      "text": "//IMPORT CELL\nimport scala.collection.mutable.ListBuffer\nimport org.apache.spark.sql._\nimport org.apache.spark.ml.feature.{RegexTokenizer, Tokenizer}\nimport org.apache.spark.sql.functions._\nimport org.apache.spark.ml.feature.StopWordsRemover\nimport scala.collection.mutable.WrappedArray\n//import org.apache.spark.ml.feature.{HashingTF, IDF}\n//import org.apache.spark.ml.feature.NGram\nimport org.apache.spark.ml.feature._\nimport org.apache.spark.ml.Pipeline\nimport org.apache.spark.ml.classification.LogisticRegression\nimport org.apache.spark.ml.evaluation.BinaryClassificationEvaluator\nimport org.apache.spark.ml.feature.{HashingTF, Tokenizer}\nimport org.apache.spark.ml.linalg.Vector\nimport org.apache.spark.ml.tuning.{CrossValidator, ParamGridBuilder}\nimport org.apache.spark.sql.Row\nimport org.apache.spark.ml.feature.QuantileDiscretizer\nimport org.apache.spark.ml.feature.Bucketizer\nimport org.apache.spark.ml.linalg._\nimport org.apache.spark.mllib.linalg.distributed._",
       "user": "davidgillen@precocityllc.com",
-      "dateUpdated": "Jan 25, 2018 6:41:52 PM",
+      "dateUpdated": "Jan 27, 2018 11:23:55 AM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -74,8 +75,8 @@
         "msg": "\nimport scala.collection.mutable.ListBuffer\n\nimport org.apache.spark.sql._\n\nimport org.apache.spark.ml.feature.{RegexTokenizer, Tokenizer}\n\nimport org.apache.spark.sql.functions._\n\nimport org.apache.spark.ml.feature.StopWordsRemover\n\nimport scala.collection.mutable.WrappedArray\n\nimport org.apache.spark.ml.feature._\n\nimport org.apache.spark.ml.Pipeline\n\nimport org.apache.spark.ml.classification.LogisticRegression\n\nimport org.apache.spark.ml.evaluation.BinaryClassificationEvaluator\n\nimport org.apache.spark.ml.feature.{HashingTF, Tokenizer}\n\nimport org.apache.spark.ml.linalg.Vector\n\nimport org.apache.spark.ml.tuning.{CrossValidator, ParamGridBuilder}\n\nimport org.apache.spark.sql.Row\n\nimport org.apache.spark.ml.feature.QuantileDiscretizer\n\nimport org.apache.spark.ml.feature.Bucketizer\n\nimport org.apache.spark.ml.linalg._\n\nimport org.apache.spark.mllib.linalg.distributed._\n"
       },
       "dateCreated": "Dec 15, 2017 4:09:53 AM",
-      "dateStarted": "Jan 25, 2018 6:33:41 PM",
-      "dateFinished": "Jan 25, 2018 6:34:53 PM",
+      "dateStarted": "Jan 27, 2018 11:23:55 AM",
+      "dateFinished": "Jan 27, 2018 11:25:07 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -116,9 +117,9 @@
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "var inputDf \u003d sqlContext.read.json(\"wasb://product-reviews@precocityquboleout.blob.core.windows.net/reviews_Electronics_5.json\") \ninputDf \u003d inputDf.withColumn(\"Category\",lit(\"Electronics\"))\ninputDf.createOrReplaceTempView(\"all_reviews\")",
+      "text": "//INGESTION CELL\nvar inputDf \u003d sqlContext.read.json(\"wasb://product-reviews@precocityquboleout.blob.core.windows.net/reviews_Electronics_5.json\") \ninputDf \u003d inputDf.withColumn(\"Category\",lit(\"Electronics\"))\ninputDf.createOrReplaceTempView(\"all_reviews\")",
       "user": "davidgillen@precocityllc.com",
-      "dateUpdated": "Jan 25, 2018 6:42:37 PM",
+      "dateUpdated": "Jan 27, 2018 11:26:02 AM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -138,30 +139,18 @@
         "params": {},
         "forms": {}
       },
-      "runtimeInfos": {
-        "jobUrl": {
-          "propertyName": "jobUrl",
-          "label": "JOB UI",
-          "tooltip": "View in Spark web UI",
-          "group": "spark",
-          "values": [
-            "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.5%3A8088%2Fproxy%2Fapplication_1516903941734_0001/jobs/job?spark\u003dtrue\u0026id\u003d0"
-          ],
-          "interpreterSettingId": "2D2QWKN8P6631515718565166"
-        }
-      },
       "paragraphProgress": {
         "jobs": [
           {
             "id": 0,
-            "jobUrl": "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.5%3A8088%2Fproxy%2Fapplication_1516903941734_0001/jobs/job?spark\u003dtrue\u0026id\u003d0",
+            "jobUrl": "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.5%3A8088%2Fproxy%2Fapplication_1517051952301_0001/jobs/job?spark\u003dtrue\u0026id\u003d0",
             "numTasks": 3,
             "numCompletedTasks": 3,
             "stages": [
               {
                 "id": 0,
                 "completed": true,
-                "stageUrl": "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.5%3A8088%2Fproxy%2Fapplication_1516903941734_0001/stages/stage/?id\u003d0\u0026attempt\u003d0",
+                "stageUrl": "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.5%3A8088%2Fproxy%2Fapplication_1517051952301_0001/stages/stage/?id\u003d0\u0026attempt\u003d0",
                 "numCompleteTasks": 3,
                 "numActiveTasks": 0,
                 "numFailedTasks": 0,
@@ -177,15 +166,11 @@
       },
       "jobName": "paragraph_1515592490982_-348148161",
       "id": "20180110-135450_333212547_q_G5FRE4ZKXB1516650111",
-      "result": {
-        "code": "SUCCESS",
-        "type": "TEXT",
-        "msg": "\ninputDf: org.apache.spark.sql.DataFrame \u003d [asin: string, helpful: array\u003cbigint\u003e ... 7 more fields]\n\ninputDf: org.apache.spark.sql.DataFrame \u003d [asin: string, helpful: array\u003cbigint\u003e ... 8 more fields]\n"
-      },
       "dateCreated": "Jan 10, 2018 1:54:50 PM",
-      "dateStarted": "Jan 25, 2018 6:42:37 PM",
-      "dateFinished": "Jan 25, 2018 6:43:04 PM",
+      "dateStarted": "Jan 27, 2018 11:26:02 AM",
+      "dateFinished": "Jan 27, 2018 11:26:25 AM",
       "status": "FINISHED",
+      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
@@ -225,9 +210,9 @@
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "inputDf.printSchema",
+      "text": "//PRINTSCHEMA CELL\ninputDf.printSchema",
       "user": "davidgillen@precocityllc.com",
-      "dateUpdated": "Jan 25, 2018 6:43:08 PM",
+      "dateUpdated": "Jan 27, 2018 11:26:44 AM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -256,15 +241,11 @@
       },
       "jobName": "paragraph_1515592817112_1923685180",
       "id": "20180110-140017_1364279757_q_G5FRE4ZKXB1516650111",
-      "result": {
-        "code": "SUCCESS",
-        "type": "TEXT",
-        "msg": "root\n |-- asin: string (nullable \u003d true)\n |-- helpful: array (nullable \u003d true)\n |    |-- element: long (containsNull \u003d true)\n |-- overall: double (nullable \u003d true)\n |-- reviewText: string (nullable \u003d true)\n |-- reviewTime: string (nullable \u003d true)\n |-- reviewerID: string (nullable \u003d true)\n |-- reviewerName: string (nullable \u003d true)\n |-- summary: string (nullable \u003d true)\n |-- unixReviewTime: long (nullable \u003d true)\n |-- Category: string (nullable \u003d false)\n\n"
-      },
       "dateCreated": "Jan 10, 2018 2:00:17 PM",
-      "dateStarted": "Jan 25, 2018 6:43:08 PM",
-      "dateFinished": "Jan 25, 2018 6:43:08 PM",
+      "dateStarted": "Jan 27, 2018 11:26:44 AM",
+      "dateFinished": "Jan 27, 2018 11:26:44 AM",
       "status": "FINISHED",
+      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
@@ -340,9 +321,9 @@
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "inputDf.show()",
+      "text": "//RAW ROWS CELL\ninputDf.show()",
       "user": "davidgillen@precocityllc.com",
-      "dateUpdated": "Jan 25, 2018 6:43:12 PM",
+      "dateUpdated": "Jan 27, 2018 11:22:46 AM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -360,18 +341,6 @@
       "settings": {
         "params": {},
         "forms": {}
-      },
-      "runtimeInfos": {
-        "jobUrl": {
-          "propertyName": "jobUrl",
-          "label": "JOB UI",
-          "tooltip": "View in Spark web UI",
-          "group": "spark",
-          "values": [
-            "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.5%3A8088%2Fproxy%2Fapplication_1516903941734_0001/jobs/job?spark\u003dtrue\u0026id\u003d1"
-          ],
-          "interpreterSettingId": "2D2QWKN8P6631515718565166"
-        }
       },
       "paragraphProgress": {
         "jobs": [
@@ -400,15 +369,11 @@
       },
       "jobName": "paragraph_1516652273363_751280833",
       "id": "20180122-201753_1042708266_q_G5FRE4ZKXB1516650111",
-      "result": {
-        "code": "SUCCESS",
-        "type": "TEXT",
-        "msg": "+----------+--------+-------+--------------------+-----------+--------------+--------------------+--------------------+--------------+-----------+\n|      asin| helpful|overall|          reviewText| reviewTime|    reviewerID|        reviewerName|             summary|unixReviewTime|   Category|\n+----------+--------+-------+--------------------+-----------+--------------+--------------------+--------------------+--------------+-----------+\n|0528881469|  [0, 0]|    5.0|We got this GPS f...| 06 2, 2013| AO94DHGC771SJ|             amazdnu|     Gotta have GPS!|    1370131200|Electronics|\n|0528881469|[12, 15]|    1.0|I\u0027m a professiona...|11 25, 2010| AMO214LNFCEI4|     Amazon Customer|   Very Disappointed|    1290643200|Electronics|\n|0528881469|[43, 45]|    3.0|Well, what can I ...| 09 9, 2010|A3N7T0DY83Y4IG|       C. A. Freeman|      1st impression|    1283990400|Electronics|\n|0528881469| [9, 10]|    2.0|Not going to writ...|11 24, 2010|A1H8PY3QHMQQA0|Dave M. Shaw \"mac...|Great grafics, PO...|    1290556800|Electronics|\n|0528881469|  [0, 0]|    1.0|I\u0027ve had mine for...|09 29, 2011|A24EV6RXELQZ63|         Wayne Smith|Major issues, onl...|    1317254400|Electronics|\n|0594451647|  [3, 3]|    5.0|I am using this w...| 01 3, 2014|A2JXAZZI9PHK9Z|Billy G. Noland \"...|HDMI Nook adapter...|    1388707200|Electronics|\n|0594451647|  [0, 0]|    2.0|The cable is very...|04 27, 2014|A2P5U7BDKKT7FW|           Christian|Cheap proprietary...|    1398556800|Electronics|\n|0594451647|  [0, 0]|    5.0|This adaptor is r...| 05 4, 2014| AAZ084UMH8VZ2|D. L. Brown \"A Kn...|A Perfdect Nook H...|    1399161600|Electronics|\n|0594451647|  [0, 0]|    4.0|This adapter easi...|07 11, 2014| AEZ3CR6BKIROJ|        Mark Dietter|A nice easy to us...|    1405036800|Electronics|\n|0594451647|  [3, 3]|    5.0|This product real...|01 20, 2014|A3BY5KCNQZXV5U|             Matenai|This works great ...|    1390176000|Electronics|\n|0594481813|  [2, 2]|    4.0|This item is just...|04 16, 2014| A7S2B0I67WNWB|              AllyMG|         As expected|    1397606400|Electronics|\n|0594481813|  [0, 0]|    5.0|bought for a spar...| 05 5, 2014|A3HICVLF4PFFMN|     Amazon Customer|           great fit|    1399248000|Electronics|\n|0594481813|  [1, 1]|    5.0|My son crewed my ...|06 24, 2013| ANSKSPEEAKY7S|                Gena|         Works Great|    1372032000|Electronics|\n|0594481813|  [0, 1]|    3.0|This is a good be...|05 25, 2013|A2QBZA4S1ROX9Q|                Jake|            It Works|    1369440000|Electronics|\n|0594481813|  [2, 2]|    5.0|I lost my B\u0026N ori...| 03 9, 2014| ANY6JUFM0GH8U|          J. Clement|Great replacement...|    1394323200|Electronics|\n|0594481813|  [0, 0]|    3.0|It does 2A and ch...|08 31, 2013| AT09WGFUM934H|                John|This is the oem c...|    1377907200|Electronics|\n|0594481813|  [3, 5]|    3.0|Go to Target or B...|09 18, 2013| AGAKHE014LQFU|           Nicodimus|$45 for a power c...|    1379462400|Electronics|\n|0594481813|  [2, 2]|    4.0|Works well, a lit...|06 27, 2013|A1S6B5QFWGVL5U|          T. Vaughan|    Good replacement|    1372291200|Electronics|\n|0972683275|  [0, 0]|    5.0|This is a great b...|07 12, 2014|A20XXTXWF2TCPY|                null|Excelant mount fo...|    1405123200|Electronics|\n|0972683275|  [1, 1]|    5.0|This mount is jus...|04 30, 2013|A2IDCSC6NVONIZ|             2Cents!|             Perfect|    1367280000|Electronics|\n+----------+--------+-------+--------------------+-----------+--------------+--------------------+--------------------+--------------+-----------+\nonly showing top 20 rows\n\n"
-      },
       "dateCreated": "Jan 22, 2018 8:17:53 PM",
       "dateStarted": "Jan 25, 2018 6:43:12 PM",
       "dateFinished": "Jan 25, 2018 6:43:13 PM",
       "status": "FINISHED",
+      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
@@ -448,9 +413,9 @@
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "inputDf \u003d inputDf.withColumn(\"upVotes\", $\"helpful\".getItem(0))\ninputDf \u003d inputDf.withColumn(\"totalVotes\", $\"helpful\".getItem(1))\ninputDf \u003d inputDf.withColumn(\"fullReview\", concat(inputDf(\"summary\"), lit(\" \"), inputDf(\"reviewText\")))\ninputDf \u003d inputDf.withColumn(\"score\",inputDf(\"upVotes\")/inputDf(\"totalVotes\"))\ninputDf.createOrReplaceTempView(\"all_reviews\")\ninputDf \u003d sqlContext.sql(\"select *,from_unixtime(unixReviewTime,\u0027YYYY-MM-dd\u0027) as reviewDate, case when score \u003c\u003d 0.8 then 0 else 1 end as label from all_reviews\")\ninputDf.createOrReplaceTempView(\"all_reviews\")",
+      "text": "//DERIVED CELL\nvar derivedDF \u003d inputDf.withColumn(\"upVotes\", $\"helpful\".getItem(0))\nderivedDF \u003d derivedDF.withColumn(\"totalVotes\", $\"helpful\".getItem(1))\nderivedDF \u003d derivedDF.withColumn(\"fullReview\", concat(derivedDF(\"summary\"), lit(\" \"), derivedDF(\"reviewText\")))\nderivedDF \u003d derivedDF.withColumn(\"score\",derivedDF(\"upVotes\")/derivedDF(\"totalVotes\"))\nderivedDF.createOrReplaceTempView(\"all_reviews\")\nderivedDF \u003d sqlContext.sql(\"select *,from_unixtime(unixReviewTime,\u0027YYYY-MM-dd\u0027) as reviewDate, case when score \u003c\u003d 0.8 then 0 else 1 end as label from all_reviews\")\nderivedDF.createOrReplaceTempView(\"all_reviews\")\nderivedDF.select(\"asin\",\"upVotes\",\"totalVotes\",\"score\",\"label\").show()",
       "user": "davidgillen@precocityllc.com",
-      "dateUpdated": "Jan 25, 2018 6:43:18 PM",
+      "dateUpdated": "Jan 27, 2018 11:33:20 AM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -464,29 +429,44 @@
         },
         "enabled": true,
         "editorMode": "ace/mode/scala",
-        "tableHide": true
+        "tableHide": false
       },
       "settings": {
         "params": {},
         "forms": {}
       },
       "paragraphProgress": {
-        "jobs": [],
-        "numCompletedTasks": 0,
-        "numTasks": 0,
+        "jobs": [
+          {
+            "id": 2,
+            "jobUrl": "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.5%3A8088%2Fproxy%2Fapplication_1517051952301_0001/jobs/job?spark\u003dtrue\u0026id\u003d2",
+            "numTasks": 1,
+            "numCompletedTasks": 1,
+            "stages": [
+              {
+                "id": 2,
+                "completed": true,
+                "stageUrl": "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.5%3A8088%2Fproxy%2Fapplication_1517051952301_0001/stages/stage/?id\u003d2\u0026attempt\u003d0",
+                "numCompleteTasks": 1,
+                "numActiveTasks": 0,
+                "numFailedTasks": 0,
+                "numTotalTasks": 1
+              }
+            ],
+            "status": "Success"
+          }
+        ],
+        "numCompletedTasks": 1,
+        "numTasks": 1,
         "truncated": false
       },
       "jobName": "paragraph_1515599944425_254605507",
       "id": "20180110-155904_1749793674_q_G5FRE4ZKXB1516650111",
-      "result": {
-        "code": "SUCCESS",
-        "type": "TEXT",
-        "msg": "\ninputDf: org.apache.spark.sql.DataFrame \u003d [asin: string, helpful: array\u003cbigint\u003e ... 9 more fields]\n\ninputDf: org.apache.spark.sql.DataFrame \u003d [asin: string, helpful: array\u003cbigint\u003e ... 10 more fields]\n\ninputDf: org.apache.spark.sql.DataFrame \u003d [asin: string, helpful: array\u003cbigint\u003e ... 11 more fields]\n\ninputDf: org.apache.spark.sql.DataFrame \u003d [asin: string, helpful: array\u003cbigint\u003e ... 12 more fields]\n\ninputDf: org.apache.spark.sql.DataFrame \u003d [asin: string, helpful: array\u003cbigint\u003e ... 14 more fields]\n"
-      },
       "dateCreated": "Jan 10, 2018 3:59:04 PM",
-      "dateStarted": "Jan 25, 2018 6:43:18 PM",
-      "dateFinished": "Jan 25, 2018 6:43:20 PM",
+      "dateStarted": "Jan 27, 2018 11:32:56 AM",
+      "dateFinished": "Jan 27, 2018 11:32:58 AM",
       "status": "FINISHED",
+      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
@@ -526,87 +506,9 @@
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "var df \u003d inputDf.filter(\"totalVotes \u003e 10\")\ndf.createOrReplaceTempView(\"reviews\")",
+      "text": "//FILTER CELL\nvar df \u003d derivedDF.filter(\"totalVotes \u003e 10\")\ndf.createOrReplaceTempView(\"reviews\")",
       "user": "davidgillen@precocityllc.com",
-      "dateUpdated": "Jan 25, 2018 6:44:55 PM",
-      "config": {
-        "colWidth": 12.0,
-        "graph": {
-          "mode": "table",
-          "height": 300.0,
-          "optionOpen": false,
-          "keys": [],
-          "values": [],
-          "groups": [],
-          "scatter": {}
-        },
-        "enabled": true,
-        "editorMode": "ace/mode/scala",
-        "tableHide": true
-      },
-      "settings": {
-        "params": {},
-        "forms": {}
-      },
-      "paragraphProgress": {
-        "jobs": [],
-        "numCompletedTasks": 0,
-        "numTasks": 0,
-        "truncated": false
-      },
-      "jobName": "paragraph_1515594030062_1307801238",
-      "id": "20180110-142030_358578607_q_G5FRE4ZKXB1516650111",
-      "result": {
-        "code": "SUCCESS",
-        "type": "TEXT",
-        "msg": "\ndf: org.apache.spark.sql.Dataset[org.apache.spark.sql.Row] \u003d [asin: string, helpful: array\u003cbigint\u003e ... 14 more fields]\n"
-      },
-      "dateCreated": "Jan 10, 2018 2:20:30 PM",
-      "dateStarted": "Jan 25, 2018 6:44:55 PM",
-      "dateFinished": "Jan 25, 2018 6:44:56 PM",
-      "status": "FINISHED",
-      "progressUpdateIntervalMs": 500
-    },
-    {
-      "text": "%md\n# Tokenization \u0026 StopWord Removal - Steps 2 \u0026 3 in our Pipeline\n![Image](https://precocityquboleout.blob.core.windows.net/images/Screen%20Shot%202018-01-25%20at%201.05.00%20PM.png)\nLet\u0027s tokenize our single long `fullReview` columnn into an array of lower case strings",
-      "user": "davidgillen@precocityllc.com",
-      "dateUpdated": "Jan 25, 2018 7:07:43 PM",
-      "config": {
-        "colWidth": 12.0,
-        "graph": {
-          "mode": "table",
-          "height": 300.0,
-          "optionOpen": false,
-          "keys": [],
-          "values": [],
-          "groups": [],
-          "scatter": {}
-        },
-        "enabled": true,
-        "editorMode": "ace/mode/markdown",
-        "editorHide": false
-      },
-      "settings": {
-        "params": {},
-        "forms": {}
-      },
-      "jobName": "paragraph_1515594249165_-1855129170",
-      "id": "20180110-142409_503381931_q_G5FRE4ZKXB1516650111",
-      "result": {
-        "code": "SUCCESS",
-        "type": "HTML",
-        "msg": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch1\u003eTokenization \u0026amp; StopWord Removal - Steps 2 \u0026amp; 3 in our Pipeline\u003c/h1\u003e\n\u003cp\u003e\u003cimg src\u003d\"https://precocityquboleout.blob.core.windows.net/images/Screen%20Shot%202018-01-25%20at%201.05.00%20PM.png\" alt\u003d\"Image\" /\u003e\u003cbr/\u003eLet\u0026rsquo;s tokenize our single long \u003ccode\u003efullReview\u003c/code\u003e columnn into an array of lower case strings\u003c/p\u003e\n\u003c/div\u003e"
-      },
-      "dateCreated": "Jan 10, 2018 2:24:09 PM",
-      "dateStarted": "Jan 25, 2018 7:07:43 PM",
-      "dateFinished": "Jan 25, 2018 7:07:43 PM",
-      "status": "FINISHED",
-      "progressUpdateIntervalMs": 500
-    },
-    {
-      "text": "val regexTokenizer \u003d new RegexTokenizer()\n  .setInputCol(\"fullReview\")\n  .setOutputCol(\"regexOutput\")\n  .setPattern(\"\\\\W\")\nvar tokenizedDF \u003d regexTokenizer.transform(df)\ntokenizedDF.createOrReplaceTempView(\"reviews\")",
-      "user": "davidgillen@precocityllc.com",
-      "dateUpdated": "Jan 25, 2018 6:45:00 PM",
+      "dateUpdated": "Jan 27, 2018 11:33:40 AM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -632,23 +534,19 @@
         "numTasks": 0,
         "truncated": false
       },
-      "jobName": "paragraph_1515594275729_1287746678",
-      "id": "20180110-142435_197011591_q_G5FRE4ZKXB1516650111",
-      "result": {
-        "code": "SUCCESS",
-        "type": "TEXT",
-        "msg": "\nregexTokenizer: org.apache.spark.ml.feature.RegexTokenizer \u003d regexTok_50d2eb0df04d\n\ntokenizedDF: org.apache.spark.sql.DataFrame \u003d [asin: string, helpful: array\u003cbigint\u003e ... 15 more fields]\n"
-      },
-      "dateCreated": "Jan 10, 2018 2:24:35 PM",
-      "dateStarted": "Jan 25, 2018 6:45:00 PM",
-      "dateFinished": "Jan 25, 2018 6:45:01 PM",
+      "jobName": "paragraph_1515594030062_1307801238",
+      "id": "20180110-142030_358578607_q_G5FRE4ZKXB1516650111",
+      "dateCreated": "Jan 10, 2018 2:20:30 PM",
+      "dateStarted": "Jan 27, 2018 11:33:32 AM",
+      "dateFinished": "Jan 27, 2018 11:33:32 AM",
       "status": "FINISHED",
+      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "tokenizedDF.select(\"asin\",\"fullReview\",\"regexOutput\").show()",
+      "text": "%md\n# Tokenization \u0026 StopWord Removal - Steps 2 \u0026 3 in our Pipeline\n![Image](https://precocityquboleout.blob.core.windows.net/images/Screen%20Shot%202018-01-25%20at%201.05.00%20PM.png)\nLet\u0027s tokenize our single long `fullReview` columnn into an array of lower case strings",
       "user": "davidgillen@precocityllc.com",
-      "dateUpdated": "Jan 25, 2018 6:45:05 PM",
+      "dateUpdated": "Jan 27, 2018 11:33:53 AM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -661,36 +559,61 @@
           "scatter": {}
         },
         "enabled": true,
-        "editorMode": "ace/mode/scala"
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true
       },
       "settings": {
         "params": {},
         "forms": {}
       },
-      "runtimeInfos": {
-        "jobUrl": {
-          "propertyName": "jobUrl",
-          "label": "JOB UI",
-          "tooltip": "View in Spark web UI",
-          "group": "spark",
-          "values": [
-            "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.5%3A8088%2Fproxy%2Fapplication_1516903941734_0001/jobs/job?spark\u003dtrue\u0026id\u003d2"
-          ],
-          "interpreterSettingId": "2D2QWKN8P6631515718565166"
-        }
+      "jobName": "paragraph_1515594249165_-1855129170",
+      "id": "20180110-142409_503381931_q_G5FRE4ZKXB1516650111",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch1\u003eTokenization \u0026amp; StopWord Removal - Steps 2 \u0026amp; 3 in our Pipeline\u003c/h1\u003e\n\u003cp\u003e\u003cimg src\u003d\"https://precocityquboleout.blob.core.windows.net/images/Screen%20Shot%202018-01-25%20at%201.05.00%20PM.png\" alt\u003d\"Image\" /\u003e\u003cbr/\u003eLet\u0026rsquo;s tokenize our single long \u003ccode\u003efullReview\u003c/code\u003e columnn into an array of lower case strings\u003c/p\u003e\n\u003c/div\u003e"
+      },
+      "dateCreated": "Jan 10, 2018 2:24:09 PM",
+      "dateStarted": "Jan 25, 2018 7:07:43 PM",
+      "dateFinished": "Jan 25, 2018 7:07:43 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "//TOKENIZE CELL\nval regexTokenizer \u003d new RegexTokenizer()\n  .setInputCol(\"fullReview\")\n  .setOutputCol(\"regexOutput\")\n  .setPattern(\"\\\\W\")\nvar tokenizedDF \u003d regexTokenizer.transform(df)\ntokenizedDF.createOrReplaceTempView(\"reviews\")\ntokenizedDF.select(\"asin\",\"fullReview\",\"regexOutput\").show()",
+      "user": "davidgillen@precocityllc.com",
+      "dateUpdated": "Jan 27, 2018 11:34:37 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala",
+        "tableHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
       },
       "paragraphProgress": {
         "jobs": [
           {
-            "id": 2,
-            "jobUrl": "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.5%3A8088%2Fproxy%2Fapplication_1516903941734_0001/jobs/job?spark\u003dtrue\u0026id\u003d2",
+            "id": 3,
+            "jobUrl": "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.5%3A8088%2Fproxy%2Fapplication_1517051952301_0001/jobs/job?spark\u003dtrue\u0026id\u003d3",
             "numTasks": 1,
             "numCompletedTasks": 1,
             "stages": [
               {
-                "id": 2,
+                "id": 3,
                 "completed": true,
-                "stageUrl": "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.5%3A8088%2Fproxy%2Fapplication_1516903941734_0001/stages/stage/?id\u003d2\u0026attempt\u003d0",
+                "stageUrl": "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.5%3A8088%2Fproxy%2Fapplication_1517051952301_0001/stages/stage/?id\u003d3\u0026attempt\u003d0",
                 "numCompleteTasks": 1,
                 "numActiveTasks": 0,
                 "numFailedTasks": 0,
@@ -704,17 +627,13 @@
         "numTasks": 1,
         "truncated": false
       },
-      "jobName": "paragraph_1516905821657_143118965",
-      "id": "20180125-184341_1565614708_q_G5FRE4ZKXB1516650111",
-      "result": {
-        "code": "SUCCESS",
-        "type": "TEXT",
-        "msg": "+----------+--------------------+--------------------+\n|      asin|          fullReview|         regexOutput|\n+----------+--------------------+--------------------+\n|0528881469|Very Disappointed...|[very, disappoint...|\n|0528881469|1st impression We...|[1st, impression,...|\n|0972683275|Real value for th...|[real, value, for...|\n|0972683275|What a piece of j...|[what, a, piece, ...|\n|0972683275|Excellent, at any...|[excellent, at, a...|\n|0972683275|It Works But Coul...|[it, works, but, ...|\n|0972683275|Excellent mount D...|[excellent, mount...|\n|0972683275|Poor Quality Cont...|[poor, quality, c...|\n|0972683275|Junk, sags, wobbl...|[junk, sags, wobb...|\n|1400501466|Excellent hardwar...|[excellent, hardw...|\n|1400501466|Outstanding 7\" Ta...|[outstanding, 7, ...|\n|1400501466|Nook Tablet The N...|[nook, tablet, th...|\n|1400501466|Tablet Good, supp...|[tablet, good, su...|\n|1400501466|Very Limited Unle...|[very, limited, u...|\n|1400501466|Memory Card Issue...|[memory, card, is...|\n|1400501520|Great little devi...|[great, little, d...|\n|1400501520|best screen out o...|[best, screen, ou...|\n|1400501520|Initially liked, ...|[initially, liked...|\n|1400501520|Great product at ...|[great, product, ...|\n|1400501520|Best Tablet On A ...|[best, tablet, on...|\n+----------+--------------------+--------------------+\nonly showing top 20 rows\n\n"
-      },
-      "dateCreated": "Jan 25, 2018 6:43:41 PM",
-      "dateStarted": "Jan 25, 2018 6:45:05 PM",
-      "dateFinished": "Jan 25, 2018 6:45:07 PM",
+      "jobName": "paragraph_1515594275729_1287746678",
+      "id": "20180110-142435_197011591_q_G5FRE4ZKXB1516650111",
+      "dateCreated": "Jan 10, 2018 2:24:35 PM",
+      "dateStarted": "Jan 27, 2018 11:34:38 AM",
+      "dateFinished": "Jan 27, 2018 11:34:42 AM",
       "status": "FINISHED",
+      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
@@ -775,18 +694,6 @@
       "settings": {
         "params": {},
         "forms": {}
-      },
-      "runtimeInfos": {
-        "jobUrl": {
-          "propertyName": "jobUrl",
-          "label": "JOB UI",
-          "tooltip": "View in Spark web UI",
-          "group": "spark",
-          "values": [
-            "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.5%3A8088%2Fproxy%2Fapplication_1516903941734_0001/jobs/job?spark\u003dtrue\u0026id\u003d4"
-          ],
-          "interpreterSettingId": "2D2QWKN8P6631515718565166"
-        }
       },
       "paragraphProgress": {
         "jobs": [
@@ -1003,18 +910,6 @@
       "settings": {
         "params": {},
         "forms": {}
-      },
-      "runtimeInfos": {
-        "jobUrl": {
-          "propertyName": "jobUrl",
-          "label": "JOB UI",
-          "tooltip": "View in Spark web UI",
-          "group": "spark",
-          "values": [
-            "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.5%3A8088%2Fproxy%2Fapplication_1516903941734_0001/jobs/job?spark\u003dtrue\u0026id\u003d8"
-          ],
-          "interpreterSettingId": "2D2QWKN8P6631515718565166"
-        }
       },
       "paragraphProgress": {
         "jobs": [
