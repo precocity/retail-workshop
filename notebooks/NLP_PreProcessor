@@ -38,9 +38,9 @@
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "//IMPORT CELL\nimport scala.collection.mutable.ListBuffer\nimport org.apache.spark.sql._\nimport org.apache.spark.ml.feature.{RegexTokenizer, Tokenizer}\nimport org.apache.spark.sql.functions._\nimport org.apache.spark.ml.feature.StopWordsRemover\nimport scala.collection.mutable.WrappedArray\n//import org.apache.spark.ml.feature.{HashingTF, IDF}\n//import org.apache.spark.ml.feature.NGram\nimport org.apache.spark.ml.feature._\nimport org.apache.spark.ml.Pipeline\nimport org.apache.spark.ml.classification.LogisticRegression\nimport org.apache.spark.ml.evaluation.BinaryClassificationEvaluator\nimport org.apache.spark.ml.feature.{HashingTF, Tokenizer}\nimport org.apache.spark.ml.linalg.Vector\nimport org.apache.spark.ml.tuning.{CrossValidator, ParamGridBuilder}\nimport org.apache.spark.sql.Row\nimport org.apache.spark.ml.feature.QuantileDiscretizer\nimport org.apache.spark.ml.feature.Bucketizer\nimport org.apache.spark.ml.linalg._\nimport org.apache.spark.mllib.linalg.distributed._",
+      "text": "//IMPORT CELL\nimport scala.collection.mutable.ListBuffer\nimport org.apache.spark.sql._\nimport org.apache.spark.ml.feature.{RegexTokenizer, Tokenizer}\nimport org.apache.spark.sql.functions._\nimport org.apache.spark.ml.feature.StopWordsRemover\nimport scala.collection.mutable.WrappedArray\n//import org.apache.spark.ml.feature.{HashingTF, IDF}\n//import org.apache.spark.ml.feature.NGram ///\nimport org.apache.spark.ml.feature._\nimport org.apache.spark.ml.Pipeline\nimport org.apache.spark.ml.classification.LogisticRegression\nimport org.apache.spark.ml.evaluation.BinaryClassificationEvaluator\nimport org.apache.spark.ml.feature.{HashingTF, Tokenizer}\nimport org.apache.spark.ml.linalg.Vector\nimport org.apache.spark.ml.tuning.{CrossValidator, ParamGridBuilder}\nimport org.apache.spark.sql.Row\nimport org.apache.spark.ml.feature.QuantileDiscretizer\nimport org.apache.spark.ml.feature.Bucketizer\nimport org.apache.spark.ml.linalg._\nimport org.apache.spark.mllib.linalg.distributed._",
       "user": "davidgillen@precocityllc.com",
-      "dateUpdated": "Jan 27, 2018 11:23:55 AM",
+      "dateUpdated": "Jan 29, 2018 8:43:01 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
