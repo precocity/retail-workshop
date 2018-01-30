@@ -117,9 +117,9 @@
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "//INGESTION CELL\nvar inputDf \u003d sqlContext.read.json(\"wasb://product-reviews@precocityquboleout.blob.core.windows.net/reviews_Electronics_5.json\") \ninputDf \u003d inputDf.withColumn(\"Category\",lit(\"Electronics\"))\ninputDf.createOrReplaceTempView(\"all_reviews\")",
+      "text": "//INGESTION CELL\nvar inputDf \u003d sqlContext.read.json(\"wasb://product-reviews@precocityquboleout.blob.core.windows.net/reviews_Electronics_5.json\") \ninputDf \u003d inputDf.withColumn(\"Category\",lit(\"Electronics\"))\ninputDf.createOrReplaceTempView(\"all_reviews\")\ninputDf.printSchema",
       "user": "davidgillen@precocityllc.com",
-      "dateUpdated": "Jan 27, 2018 11:26:02 AM",
+      "dateUpdated": "Jan 30, 2018 4:16:06 AM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -169,81 +169,6 @@
       "dateCreated": "Jan 10, 2018 1:54:50 PM",
       "dateStarted": "Jan 27, 2018 11:26:02 AM",
       "dateFinished": "Jan 27, 2018 11:26:25 AM",
-      "status": "FINISHED",
-      "errorMessage": "",
-      "progressUpdateIntervalMs": 500
-    },
-    {
-      "text": "%md\n# Let\u0027s look at the schema of the data",
-      "user": "davidgillen@precocityllc.com",
-      "dateUpdated": "Jan 20, 2018 1:07:29 PM",
-      "config": {
-        "colWidth": 12.0,
-        "graph": {
-          "mode": "table",
-          "height": 300.0,
-          "optionOpen": false,
-          "keys": [],
-          "values": [],
-          "groups": [],
-          "scatter": {}
-        },
-        "enabled": true,
-        "editorMode": "ace/mode/markdown",
-        "editorHide": true
-      },
-      "settings": {
-        "params": {},
-        "forms": {}
-      },
-      "jobName": "paragraph_1515592760157_-921440991",
-      "id": "20180110-135920_249521663_q_G5FRE4ZKXB1516650111",
-      "result": {
-        "code": "SUCCESS",
-        "type": "HTML",
-        "msg": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch1\u003eLet\u0026rsquo;s look at the schema of the data\u003c/h1\u003e\n\u003c/div\u003e"
-      },
-      "dateCreated": "Jan 10, 2018 1:59:20 PM",
-      "dateStarted": "Jan 20, 2018 1:07:29 PM",
-      "dateFinished": "Jan 20, 2018 1:07:29 PM",
-      "status": "FINISHED",
-      "progressUpdateIntervalMs": 500
-    },
-    {
-      "text": "//PRINTSCHEMA CELL\ninputDf.printSchema",
-      "user": "davidgillen@precocityllc.com",
-      "dateUpdated": "Jan 27, 2018 11:26:44 AM",
-      "config": {
-        "colWidth": 12.0,
-        "graph": {
-          "mode": "table",
-          "height": 300.0,
-          "optionOpen": false,
-          "keys": [],
-          "values": [],
-          "groups": [],
-          "scatter": {}
-        },
-        "enabled": true,
-        "editorMode": "ace/mode/scala",
-        "tableHide": false,
-        "editorHide": false
-      },
-      "settings": {
-        "params": {},
-        "forms": {}
-      },
-      "paragraphProgress": {
-        "jobs": [],
-        "numCompletedTasks": 0,
-        "numTasks": 0,
-        "truncated": false
-      },
-      "jobName": "paragraph_1515592817112_1923685180",
-      "id": "20180110-140017_1364279757_q_G5FRE4ZKXB1516650111",
-      "dateCreated": "Jan 10, 2018 2:00:17 PM",
-      "dateStarted": "Jan 27, 2018 11:26:44 AM",
-      "dateFinished": "Jan 27, 2018 11:26:44 AM",
       "status": "FINISHED",
       "errorMessage": "",
       "progressUpdateIntervalMs": 500
@@ -508,7 +433,7 @@
     {
       "text": "%spark.sql --TOTAL VOTE CELL\nselect overall,count(*) as cnt from all_reviews where totalVotes \u003e\u003d \"${LowerBoundOnTotalVotes\u003d0}\" group by overall order by overall",
       "user": "davidgillen@precocityllc.com",
-      "dateUpdated": "Jan 27, 2018 12:03:57 PM",
+      "dateUpdated": "Jan 30, 2018 4:20:48 AM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -549,7 +474,7 @@
       "settings": {
         "params": {
           "limit": "10",
-          "LowerBoundOnTotalVotes": "10"
+          "LowerBoundOnTotalVotes": "0"
         },
         "forms": {
           "LowerBoundOnTotalVotes": {
@@ -560,45 +485,18 @@
         }
       },
       "paragraphProgress": {
-        "jobs": [
-          {
-            "id": 27,
-            "jobUrl": "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.5%3A8088%2Fproxy%2Fapplication_1517051952301_0001/jobs/job?spark\u003dtrue\u0026id\u003d27",
-            "numTasks": 212,
-            "numCompletedTasks": 212,
-            "stages": [
-              {
-                "id": 42,
-                "completed": true,
-                "stageUrl": "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.5%3A8088%2Fproxy%2Fapplication_1517051952301_0001/stages/stage/?id\u003d42\u0026attempt\u003d0",
-                "numCompleteTasks": 12,
-                "numActiveTasks": 0,
-                "numFailedTasks": 0,
-                "numTotalTasks": 12
-              },
-              {
-                "id": 43,
-                "completed": true,
-                "stageUrl": "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.5%3A8088%2Fproxy%2Fapplication_1517051952301_0001/stages/stage/?id\u003d43\u0026attempt\u003d0",
-                "numCompleteTasks": 200,
-                "numActiveTasks": 0,
-                "numFailedTasks": 0,
-                "numTotalTasks": 200
-              }
-            ],
-            "status": "Running"
-          }
-        ],
-        "numCompletedTasks": 212,
-        "numTasks": 212,
+        "jobs": [],
+        "numCompletedTasks": 0,
+        "numTasks": 0,
         "truncated": false
       },
+      "version": "v0",
       "jobName": "paragraph_1517053988502_409364696",
       "id": "20180127-115308_785965316_q_G5FRE4ZKXB1516650111",
       "dateCreated": "Jan 27, 2018 11:53:08 AM",
-      "dateStarted": "Jan 27, 2018 12:03:34 PM",
-      "dateFinished": "Jan 27, 2018 12:03:43 PM",
-      "status": "FINISHED",
+      "dateStarted": "Jan 30, 2018 4:20:48 AM",
+      "dateFinished": "Jan 30, 2018 4:21:42 AM",
+      "status": "ERROR",
       "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
@@ -863,84 +761,6 @@
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "%md\n# Compute number of words\nJust as a helper to display shorter reviews to fit on screen",
-      "user": "davidgillen@precocityllc.com",
-      "dateUpdated": "Jan 25, 2018 7:01:03 PM",
-      "config": {
-        "colWidth": 12.0,
-        "graph": {
-          "mode": "table",
-          "height": 300.0,
-          "optionOpen": false,
-          "keys": [],
-          "values": [],
-          "groups": [],
-          "scatter": {}
-        },
-        "enabled": true,
-        "editorMode": "ace/mode/markdown",
-        "editorHide": true
-      },
-      "settings": {
-        "params": {},
-        "forms": {}
-      },
-      "jobName": "paragraph_1515616088408_-1598597337",
-      "id": "20180110-202808_1151525844_q_G5FRE4ZKXB1516650111",
-      "result": {
-        "code": "SUCCESS",
-        "type": "HTML",
-        "msg": "\u003cdiv class\u003d\"markdown-body\"\u003e\n\u003ch1\u003eCompute number of words\u003c/h1\u003e\n\u003cp\u003eJust as a helper to display shorter reviews to fit on screen\u003c/p\u003e\n\u003c/div\u003e"
-      },
-      "dateCreated": "Jan 10, 2018 8:28:08 PM",
-      "dateStarted": "Jan 25, 2018 7:00:59 PM",
-      "dateFinished": "Jan 25, 2018 7:00:59 PM",
-      "status": "FINISHED",
-      "progressUpdateIntervalMs": 500
-    },
-    {
-      "text": "//NUMWORDS CELL\nfilteredDF.createOrReplaceTempView(\"reviews\")\nval filterByLengthUDF \u003d sqlContext.udf.register(\"NumWords\", (x:WrappedArray[String]) \u003d\u003e x.length)\nvar numWordsDF \u003d sqlContext.sql(\"select *, NumWords(stopWordsOutput) as numWords from reviews\")\nnumWordsDF.createOrReplaceTempView(\"reviews\")",
-      "user": "davidgillen@precocityllc.com",
-      "dateUpdated": "Jan 27, 2018 11:43:02 AM",
-      "config": {
-        "colWidth": 12.0,
-        "graph": {
-          "mode": "table",
-          "height": 300.0,
-          "optionOpen": false,
-          "keys": [],
-          "values": [],
-          "groups": [],
-          "scatter": {}
-        },
-        "enabled": true,
-        "editorMode": "ace/mode/scala",
-        "tableHide": false
-      },
-      "settings": {
-        "params": {},
-        "forms": {}
-      },
-      "paragraphProgress": {
-        "jobs": [],
-        "numCompletedTasks": 0,
-        "numTasks": 0,
-        "truncated": false
-      },
-      "jobName": "paragraph_1515595029921_550427102",
-      "id": "20180110-143709_254528079_q_G5FRE4ZKXB1516650111",
-      "result": {
-        "code": "SUCCESS",
-        "type": "TEXT",
-        "msg": "\nfilterByLengthUDF: org.apache.spark.sql.expressions.UserDefinedFunction \u003d UserDefinedFunction(\u003cfunction1\u003e,IntegerType,Some(List(ArrayType(StringType,true))))\n\nnumWordsDF: org.apache.spark.sql.DataFrame \u003d [asin: string, helpful: array\u003cbigint\u003e ... 17 more fields]\n"
-      },
-      "dateCreated": "Jan 10, 2018 2:37:09 PM",
-      "dateStarted": "Jan 27, 2018 11:40:24 AM",
-      "dateFinished": "Jan 27, 2018 11:40:25 AM",
-      "status": "FINISHED",
-      "progressUpdateIntervalMs": 500
-    },
-    {
       "text": "%md\n# BiGrams\nBigrams are 2 consecutive tokens/words and can better capture the sequential nature of reviews than just single words.  ",
       "user": "davidgillen@precocityllc.com",
       "dateUpdated": "Jan 20, 2018 1:07:30 PM",
@@ -977,9 +797,9 @@
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "//BIGRAM CELL\nimport scala.collection.mutable.WrappedArray\nval bigramTF \u003d new NGram().setN(2).setInputCol(\"stopWordsOutput\").setOutputCol(\"bigrams\")\nval bigramDf \u003d bigramTF.transform(numWordsDF)\nval concat2ArraysUDF \u003d udf { (uni: WrappedArray[String],bi:WrappedArray[String]) \u003d\u003e uni ++ bi }\n//concat words \u0026 bigrams into one column called uniAndBi\nvar newTF \u003d bigramDf.withColumn(\"uniAndBi\",concat2ArraysUDF(bigramDf(\"stopWordsOutput\"), bigramDf(\"bigrams\")))\nnewTF.createOrReplaceTempView(\"reviews\")\nspark.sql(\"select asin, stopWordsOutput,bigrams from reviews where numWords \u003c 10 limit 5\").show(false)",
+      "text": "//BIGRAM CELL\n\n//Compute # of words in each review just as helper to allow us to filter for reviews that can easily fit on screen\nfilteredDF.createOrReplaceTempView(\"reviews\")\nval filterByLengthUDF \u003d sqlContext.udf.register(\"NumWords\", (x:WrappedArray[String]) \u003d\u003e x.length)\nvar numWordsDF \u003d sqlContext.sql(\"select *, NumWords(stopWordsOutput) as numWords from reviews\")\nnumWordsDF.createOrReplaceTempView(\"reviews\")\n\n//compute bigrams\nimport scala.collection.mutable.WrappedArray\nval bigramTF \u003d new NGram().setN(2).setInputCol(\"stopWordsOutput\").setOutputCol(\"bigrams\")\nval bigramDf \u003d bigramTF.transform(numWordsDF)\nval concat2ArraysUDF \u003d udf { (uni: WrappedArray[String],bi:WrappedArray[String]) \u003d\u003e uni ++ bi }\n//concat words \u0026 bigrams into one column called uniAndBi\nvar newTF \u003d bigramDf.withColumn(\"uniAndBi\",concat2ArraysUDF(bigramDf(\"stopWordsOutput\"), bigramDf(\"bigrams\")))\nnewTF.createOrReplaceTempView(\"reviews\")\nspark.sql(\"select asin, stopWordsOutput,bigrams from reviews where numWords \u003c 10 limit 5\").show(false)",
       "user": "davidgillen@precocityllc.com",
-      "dateUpdated": "Jan 27, 2018 11:43:02 AM",
+      "dateUpdated": "Jan 30, 2018 4:18:55 AM",
       "config": {
         "colWidth": 12.0,
         "graph": {
