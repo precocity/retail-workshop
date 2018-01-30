@@ -34,7 +34,7 @@ var cachedCategories;
 var host = "reviewappprecocity.azurewebsites.net";
 
 //Event Hub
-var connectionString = 'Endpoint=sb://new-reviews.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=aoVRAW0YWk4C35MvjTVh2Y4ItADf4bbUN6OIm3iIU6k=';
+var connectionString = '<generate and paste in here>';
 var eventHubPath = 'new-review-event-hub';
 //var eventHubClient; // = EventHubClient.fromConnectionString(connectionString, eventHubPath);
 var receiveAfterTime = Date.now() - 5000;

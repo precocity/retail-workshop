@@ -17,7 +17,7 @@
 var config = {}
 
 config.endpoint = "https://reviewappprecocity.documents.azure.com:443/";
-config.primaryKey = "E7M0E8EOQr1vI3Ks1RgMfZaIt3nYPMNILRZ1oQ7PGX86PaiGxjVZWZu1EEqUwAogGlWRrvgpLt7eW80tKnLifw==";
+config.primaryKey = "<generate and paste in here>";
 
 config.database = {
     "id": "reviews"
