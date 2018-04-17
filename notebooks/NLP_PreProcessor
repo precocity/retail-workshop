@@ -25,7 +25,7 @@
         "forms": {}
       },
       "jobName": "paragraph_1516905440675_-1933126186",
-      "id": "20180125-183720_494633819_q_G5FRE4ZKXB1516650111",
+      "id": "20180125-183720_494633819_q_J8JF4YMWE11523976828",
       "result": {
         "code": "SUCCESS",
         "type": "HTML",
@@ -39,8 +39,8 @@
     },
     {
       "text": "//IMPORT CELL\nimport scala.collection.mutable.ListBuffer\nimport org.apache.spark.sql._\nimport org.apache.spark.ml.feature.{RegexTokenizer, Tokenizer}\nimport org.apache.spark.sql.functions._\nimport org.apache.spark.ml.feature.StopWordsRemover\nimport scala.collection.mutable.WrappedArray\n//import org.apache.spark.ml.feature.{HashingTF, IDF}\n//import org.apache.spark.ml.feature.NGram ///\nimport org.apache.spark.ml.feature._\nimport org.apache.spark.ml.Pipeline\nimport org.apache.spark.ml.classification.LogisticRegression\nimport org.apache.spark.ml.evaluation.BinaryClassificationEvaluator\nimport org.apache.spark.ml.feature.{HashingTF, Tokenizer}\nimport org.apache.spark.ml.linalg.Vector\nimport org.apache.spark.ml.tuning.{CrossValidator, ParamGridBuilder}\nimport org.apache.spark.sql.Row\nimport org.apache.spark.ml.feature.QuantileDiscretizer\nimport org.apache.spark.ml.feature.Bucketizer\nimport org.apache.spark.ml.linalg._\nimport org.apache.spark.mllib.linalg.distributed._",
-      "user": "davidgillen@precocityllc.com",
-      "dateUpdated": "Jan 29, 2018 8:43:01 PM",
+      "user": "mattdavies@precocityllc.com",
+      "dateUpdated": "Apr 17, 2018 3:43:19 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -67,16 +67,17 @@
         "numTasks": 0,
         "truncated": false
       },
+      "version": "v0",
       "jobName": "paragraph_1513310993398_-1922442312",
-      "id": "20171215-040953_335028120_q_G5FRE4ZKXB1516650111",
+      "id": "20171215-040953_335028120_q_J8JF4YMWE11523976828",
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
         "msg": "\nimport scala.collection.mutable.ListBuffer\n\nimport org.apache.spark.sql._\n\nimport org.apache.spark.ml.feature.{RegexTokenizer, Tokenizer}\n\nimport org.apache.spark.sql.functions._\n\nimport org.apache.spark.ml.feature.StopWordsRemover\n\nimport scala.collection.mutable.WrappedArray\n\nimport org.apache.spark.ml.feature._\n\nimport org.apache.spark.ml.Pipeline\n\nimport org.apache.spark.ml.classification.LogisticRegression\n\nimport org.apache.spark.ml.evaluation.BinaryClassificationEvaluator\n\nimport org.apache.spark.ml.feature.{HashingTF, Tokenizer}\n\nimport org.apache.spark.ml.linalg.Vector\n\nimport org.apache.spark.ml.tuning.{CrossValidator, ParamGridBuilder}\n\nimport org.apache.spark.sql.Row\n\nimport org.apache.spark.ml.feature.QuantileDiscretizer\n\nimport org.apache.spark.ml.feature.Bucketizer\n\nimport org.apache.spark.ml.linalg._\n\nimport org.apache.spark.mllib.linalg.distributed._\n"
       },
       "dateCreated": "Dec 15, 2017 4:09:53 AM",
-      "dateStarted": "Jan 27, 2018 11:23:55 AM",
-      "dateFinished": "Jan 27, 2018 11:25:07 AM",
+      "dateStarted": "Apr 17, 2018 3:43:19 PM",
+      "dateFinished": "Apr 17, 2018 3:44:35 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -104,7 +105,7 @@
         "forms": {}
       },
       "jobName": "paragraph_1515012617693_-1628484423",
-      "id": "20180103-205017_99358902_q_G5FRE4ZKXB1516650111",
+      "id": "20180103-205017_99358902_q_J8JF4YMWE11523976828",
       "result": {
         "code": "SUCCESS",
         "type": "HTML",
@@ -118,8 +119,8 @@
     },
     {
       "text": "//INGESTION CELL\nvar inputDf \u003d sqlContext.read.json(\"wasb://product-reviews@precocityquboleout.blob.core.windows.net/reviews_Electronics_5.json\") \ninputDf \u003d inputDf.withColumn(\"Category\",lit(\"Electronics\"))\ninputDf.createOrReplaceTempView(\"all_reviews\")\ninputDf.printSchema",
-      "user": "davidgillen@precocityllc.com",
-      "dateUpdated": "Jan 30, 2018 4:16:06 AM",
+      "user": "mattdavies@precocityllc.com",
+      "dateUpdated": "Apr 17, 2018 3:52:02 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -139,18 +140,30 @@
         "params": {},
         "forms": {}
       },
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "JOB UI",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.5%3A8088%2Fproxy%2Fapplication_1523968118458_0001/jobs/job?spark\u003dtrue\u0026id\u003d0"
+          ],
+          "interpreterSettingId": "2DATXXMPR9371523633749619"
+        }
+      },
       "paragraphProgress": {
         "jobs": [
           {
             "id": 0,
-            "jobUrl": "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.5%3A8088%2Fproxy%2Fapplication_1517051952301_0001/jobs/job?spark\u003dtrue\u0026id\u003d0",
+            "jobUrl": "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.5%3A8088%2Fproxy%2Fapplication_1523968118458_0001/jobs/job?spark\u003dtrue\u0026id\u003d0",
             "numTasks": 3,
             "numCompletedTasks": 3,
             "stages": [
               {
                 "id": 0,
                 "completed": true,
-                "stageUrl": "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.5%3A8088%2Fproxy%2Fapplication_1517051952301_0001/stages/stage/?id\u003d0\u0026attempt\u003d0",
+                "stageUrl": "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.5%3A8088%2Fproxy%2Fapplication_1523968118458_0001/stages/stage/?id\u003d0\u0026attempt\u003d0",
                 "numCompleteTasks": 3,
                 "numActiveTasks": 0,
                 "numFailedTasks": 0,
@@ -164,13 +177,18 @@
         "numTasks": 3,
         "truncated": false
       },
+      "version": "v0",
       "jobName": "paragraph_1515592490982_-348148161",
-      "id": "20180110-135450_333212547_q_G5FRE4ZKXB1516650111",
+      "id": "20180110-135450_333212547_q_J8JF4YMWE11523976828",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "\ninputDf: org.apache.spark.sql.DataFrame \u003d [asin: string, helpful: array\u003cbigint\u003e ... 7 more fields]\n\ninputDf: org.apache.spark.sql.DataFrame \u003d [asin: string, helpful: array\u003cbigint\u003e ... 8 more fields]\nroot\n |-- asin: string (nullable \u003d true)\n |-- helpful: array (nullable \u003d true)\n |    |-- element: long (containsNull \u003d true)\n |-- overall: double (nullable \u003d true)\n |-- reviewText: string (nullable \u003d true)\n |-- reviewTime: string (nullable \u003d true)\n |-- reviewerID: string (nullable \u003d true)\n |-- reviewerName: string (nullable \u003d true)\n |-- summary: string (nullable \u003d true)\n |-- unixReviewTime: long (nullable \u003d true)\n |-- Category: string (nullable \u003d false)\n\n"
+      },
       "dateCreated": "Jan 10, 2018 1:54:50 PM",
-      "dateStarted": "Jan 27, 2018 11:26:02 AM",
-      "dateFinished": "Jan 27, 2018 11:26:25 AM",
+      "dateStarted": "Apr 17, 2018 3:52:02 PM",
+      "dateFinished": "Apr 17, 2018 3:52:38 PM",
       "status": "FINISHED",
-      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
@@ -197,7 +215,7 @@
         "forms": {}
       },
       "jobName": "paragraph_1515592844615_-610225104",
-      "id": "20180110-140044_1561032633_q_G5FRE4ZKXB1516650111",
+      "id": "20180110-140044_1561032633_q_J8JF4YMWE11523976828",
       "result": {
         "code": "SUCCESS",
         "type": "HTML",
@@ -233,7 +251,7 @@
         "forms": {}
       },
       "jobName": "paragraph_1515592715793_1023602616",
-      "id": "20180110-135835_584406976_q_G5FRE4ZKXB1516650111",
+      "id": "20180110-135835_584406976_q_J8JF4YMWE11523976828",
       "result": {
         "code": "SUCCESS",
         "type": "HTML",
@@ -247,8 +265,8 @@
     },
     {
       "text": "//RAW ROWS CELL\ninputDf.show()",
-      "user": "davidgillen@precocityllc.com",
-      "dateUpdated": "Jan 27, 2018 11:22:46 AM",
+      "user": "mattdavies@precocityllc.com",
+      "dateUpdated": "Apr 17, 2018 3:53:13 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -267,18 +285,30 @@
         "params": {},
         "forms": {}
       },
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "JOB UI",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.5%3A8088%2Fproxy%2Fapplication_1523968118458_0001/jobs/job?spark\u003dtrue\u0026id\u003d1"
+          ],
+          "interpreterSettingId": "2DATXXMPR9371523633749619"
+        }
+      },
       "paragraphProgress": {
         "jobs": [
           {
             "id": 1,
-            "jobUrl": "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.5%3A8088%2Fproxy%2Fapplication_1516903941734_0001/jobs/job?spark\u003dtrue\u0026id\u003d1",
+            "jobUrl": "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.5%3A8088%2Fproxy%2Fapplication_1523968118458_0001/jobs/job?spark\u003dtrue\u0026id\u003d1",
             "numTasks": 1,
             "numCompletedTasks": 1,
             "stages": [
               {
                 "id": 1,
                 "completed": true,
-                "stageUrl": "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.5%3A8088%2Fproxy%2Fapplication_1516903941734_0001/stages/stage/?id\u003d1\u0026attempt\u003d0",
+                "stageUrl": "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.5%3A8088%2Fproxy%2Fapplication_1523968118458_0001/stages/stage/?id\u003d1\u0026attempt\u003d0",
                 "numCompleteTasks": 1,
                 "numActiveTasks": 0,
                 "numFailedTasks": 0,
@@ -292,13 +322,18 @@
         "numTasks": 1,
         "truncated": false
       },
+      "version": "v0",
       "jobName": "paragraph_1516652273363_751280833",
-      "id": "20180122-201753_1042708266_q_G5FRE4ZKXB1516650111",
+      "id": "20180122-201753_1042708266_q_J8JF4YMWE11523976828",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "+----------+--------+-------+--------------------+-----------+--------------+--------------------+--------------------+--------------+-----------+\n|      asin| helpful|overall|          reviewText| reviewTime|    reviewerID|        reviewerName|             summary|unixReviewTime|   Category|\n+----------+--------+-------+--------------------+-----------+--------------+--------------------+--------------------+--------------+-----------+\n|0528881469|  [0, 0]|    5.0|We got this GPS f...| 06 2, 2013| AO94DHGC771SJ|             amazdnu|     Gotta have GPS!|    1370131200|Electronics|\n|0528881469|[12, 15]|    1.0|I\u0027m a professiona...|11 25, 2010| AMO214LNFCEI4|     Amazon Customer|   Very Disappointed|    1290643200|Electronics|\n|0528881469|[43, 45]|    3.0|Well, what can I ...| 09 9, 2010|A3N7T0DY83Y4IG|       C. A. Freeman|      1st impression|    1283990400|Electronics|\n|0528881469| [9, 10]|    2.0|Not going to writ...|11 24, 2010|A1H8PY3QHMQQA0|Dave M. Shaw \"mac...|Great grafics, PO...|    1290556800|Electronics|\n|0528881469|  [0, 0]|    1.0|I\u0027ve had mine for...|09 29, 2011|A24EV6RXELQZ63|         Wayne Smith|Major issues, onl...|    1317254400|Electronics|\n|0594451647|  [3, 3]|    5.0|I am using this w...| 01 3, 2014|A2JXAZZI9PHK9Z|Billy G. Noland \"...|HDMI Nook adapter...|    1388707200|Electronics|\n|0594451647|  [0, 0]|    2.0|The cable is very...|04 27, 2014|A2P5U7BDKKT7FW|           Christian|Cheap proprietary...|    1398556800|Electronics|\n|0594451647|  [0, 0]|    5.0|This adaptor is r...| 05 4, 2014| AAZ084UMH8VZ2|D. L. Brown \"A Kn...|A Perfdect Nook H...|    1399161600|Electronics|\n|0594451647|  [0, 0]|    4.0|This adapter easi...|07 11, 2014| AEZ3CR6BKIROJ|        Mark Dietter|A nice easy to us...|    1405036800|Electronics|\n|0594451647|  [3, 3]|    5.0|This product real...|01 20, 2014|A3BY5KCNQZXV5U|             Matenai|This works great ...|    1390176000|Electronics|\n|0594481813|  [2, 2]|    4.0|This item is just...|04 16, 2014| A7S2B0I67WNWB|              AllyMG|         As expected|    1397606400|Electronics|\n|0594481813|  [0, 0]|    5.0|bought for a spar...| 05 5, 2014|A3HICVLF4PFFMN|     Amazon Customer|           great fit|    1399248000|Electronics|\n|0594481813|  [1, 1]|    5.0|My son crewed my ...|06 24, 2013| ANSKSPEEAKY7S|                Gena|         Works Great|    1372032000|Electronics|\n|0594481813|  [0, 1]|    3.0|This is a good be...|05 25, 2013|A2QBZA4S1ROX9Q|                Jake|            It Works|    1369440000|Electronics|\n|0594481813|  [2, 2]|    5.0|I lost my B\u0026N ori...| 03 9, 2014| ANY6JUFM0GH8U|          J. Clement|Great replacement...|    1394323200|Electronics|\n|0594481813|  [0, 0]|    3.0|It does 2A and ch...|08 31, 2013| AT09WGFUM934H|                John|This is the oem c...|    1377907200|Electronics|\n|0594481813|  [3, 5]|    3.0|Go to Target or B...|09 18, 2013| AGAKHE014LQFU|           Nicodimus|$45 for a power c...|    1379462400|Electronics|\n|0594481813|  [2, 2]|    4.0|Works well, a lit...|06 27, 2013|A1S6B5QFWGVL5U|          T. Vaughan|    Good replacement|    1372291200|Electronics|\n|0972683275|  [0, 0]|    5.0|This is a great b...|07 12, 2014|A20XXTXWF2TCPY|                null|Excelant mount fo...|    1405123200|Electronics|\n|0972683275|  [1, 1]|    5.0|This mount is jus...|04 30, 2013|A2IDCSC6NVONIZ|             2Cents!|             Perfect|    1367280000|Electronics|\n+----------+--------+-------+--------------------+-----------+--------------+--------------------+--------------------+--------------+-----------+\nonly showing top 20 rows\n\n"
+      },
       "dateCreated": "Jan 22, 2018 8:17:53 PM",
-      "dateStarted": "Jan 25, 2018 6:43:12 PM",
-      "dateFinished": "Jan 25, 2018 6:43:13 PM",
+      "dateStarted": "Apr 17, 2018 3:53:13 PM",
+      "dateFinished": "Apr 17, 2018 3:53:15 PM",
       "status": "FINISHED",
-      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
@@ -325,7 +360,7 @@
         "forms": {}
       },
       "jobName": "paragraph_1515593657604_-2017884532",
-      "id": "20180110-141417_656842185_q_G5FRE4ZKXB1516650111",
+      "id": "20180110-141417_656842185_q_J8JF4YMWE11523976828",
       "result": {
         "code": "SUCCESS",
         "type": "HTML",
@@ -339,8 +374,8 @@
     },
     {
       "text": "//DERIVED CELL\nvar derivedDF \u003d inputDf.withColumn(\"upVotes\", $\"helpful\".getItem(0))\nderivedDF \u003d derivedDF.withColumn(\"totalVotes\", $\"helpful\".getItem(1))\nderivedDF \u003d derivedDF.withColumn(\"fullReview\", concat(derivedDF(\"summary\"), lit(\" \"), derivedDF(\"reviewText\")))\nderivedDF \u003d derivedDF.withColumn(\"score\",derivedDF(\"upVotes\")/derivedDF(\"totalVotes\"))\nderivedDF.createOrReplaceTempView(\"all_reviews\")\nderivedDF \u003d sqlContext.sql(\"select *,from_unixtime(unixReviewTime,\u0027YYYY-MM-dd\u0027) as reviewDate, case when score \u003c\u003d 0.8 then 0 else 1 end as label from all_reviews\")\nderivedDF.createOrReplaceTempView(\"all_reviews\")\nderivedDF.select(\"asin\",\"upVotes\",\"totalVotes\",\"score\",\"label\").show()",
-      "user": "davidgillen@precocityllc.com",
-      "dateUpdated": "Jan 27, 2018 11:33:20 AM",
+      "user": "mattdavies@precocityllc.com",
+      "dateUpdated": "Apr 17, 2018 3:54:25 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -360,18 +395,30 @@
         "params": {},
         "forms": {}
       },
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "JOB UI",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.5%3A8088%2Fproxy%2Fapplication_1523968118458_0001/jobs/job?spark\u003dtrue\u0026id\u003d2"
+          ],
+          "interpreterSettingId": "2DATXXMPR9371523633749619"
+        }
+      },
       "paragraphProgress": {
         "jobs": [
           {
             "id": 2,
-            "jobUrl": "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.5%3A8088%2Fproxy%2Fapplication_1517051952301_0001/jobs/job?spark\u003dtrue\u0026id\u003d2",
+            "jobUrl": "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.5%3A8088%2Fproxy%2Fapplication_1523968118458_0001/jobs/job?spark\u003dtrue\u0026id\u003d2",
             "numTasks": 1,
             "numCompletedTasks": 1,
             "stages": [
               {
                 "id": 2,
                 "completed": true,
-                "stageUrl": "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.5%3A8088%2Fproxy%2Fapplication_1517051952301_0001/stages/stage/?id\u003d2\u0026attempt\u003d0",
+                "stageUrl": "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.5%3A8088%2Fproxy%2Fapplication_1523968118458_0001/stages/stage/?id\u003d2\u0026attempt\u003d0",
                 "numCompleteTasks": 1,
                 "numActiveTasks": 0,
                 "numFailedTasks": 0,
@@ -385,13 +432,18 @@
         "numTasks": 1,
         "truncated": false
       },
+      "version": "v0",
       "jobName": "paragraph_1515599944425_254605507",
-      "id": "20180110-155904_1749793674_q_G5FRE4ZKXB1516650111",
+      "id": "20180110-155904_1749793674_q_J8JF4YMWE11523976828",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "\nderivedDF: org.apache.spark.sql.DataFrame \u003d [asin: string, helpful: array\u003cbigint\u003e ... 9 more fields]\n\nderivedDF: org.apache.spark.sql.DataFrame \u003d [asin: string, helpful: array\u003cbigint\u003e ... 10 more fields]\n\nderivedDF: org.apache.spark.sql.DataFrame \u003d [asin: string, helpful: array\u003cbigint\u003e ... 11 more fields]\n\nderivedDF: org.apache.spark.sql.DataFrame \u003d [asin: string, helpful: array\u003cbigint\u003e ... 12 more fields]\n\nderivedDF: org.apache.spark.sql.DataFrame \u003d [asin: string, helpful: array\u003cbigint\u003e ... 14 more fields]\n+----------+-------+----------+------------------+-----+\n|      asin|upVotes|totalVotes|             score|label|\n+----------+-------+----------+------------------+-----+\n|0528881469|      0|         0|              null|    1|\n|0528881469|     12|        15|               0.8|    0|\n|0528881469|     43|        45|0.9555555555555556|    1|\n|0528881469|      9|        10|               0.9|    1|\n|0528881469|      0|         0|              null|    1|\n|0594451647|      3|         3|               1.0|    1|\n|0594451647|      0|         0|              null|    1|\n|0594451647|      0|         0|              null|    1|\n|0594451647|      0|         0|              null|    1|\n|0594451647|      3|         3|               1.0|    1|\n|0594481813|      2|         2|               1.0|    1|\n|0594481813|      0|         0|              null|    1|\n|0594481813|      1|         1|               1.0|    1|\n|0594481813|      0|         1|               0.0|    0|\n|0594481813|      2|         2|               1.0|    1|\n|0594481813|      0|         0|              null|    1|\n|0594481813|      3|         5|               0.6|    0|\n|0594481813|      2|         2|               1.0|    1|\n|0972683275|      0|         0|              null|    1|\n|0972683275|      1|         1|               1.0|    1|\n+----------+-------+----------+------------------+-----+\nonly showing top 20 rows\n\n"
+      },
       "dateCreated": "Jan 10, 2018 3:59:04 PM",
-      "dateStarted": "Jan 27, 2018 11:32:56 AM",
-      "dateFinished": "Jan 27, 2018 11:32:58 AM",
+      "dateStarted": "Apr 17, 2018 3:54:25 PM",
+      "dateFinished": "Apr 17, 2018 3:54:29 PM",
       "status": "FINISHED",
-      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
@@ -418,7 +470,7 @@
         "forms": {}
       },
       "jobName": "paragraph_1517054275641_1968197029",
-      "id": "20180127-115755_1132206118_q_G5FRE4ZKXB1516650111",
+      "id": "20180127-115755_1132206118_q_J8JF4YMWE11523976828",
       "result": {
         "code": "SUCCESS",
         "type": "HTML",
@@ -432,12 +484,12 @@
     },
     {
       "text": "%spark.sql --TOTAL VOTE CELL\nselect overall,count(*) as cnt from all_reviews where totalVotes \u003e\u003d \"${LowerBoundOnTotalVotes\u003d0}\" group by overall order by overall",
-      "user": "davidgillen@precocityllc.com",
-      "dateUpdated": "Jan 30, 2018 4:20:48 AM",
+      "user": "mattdavies@precocityllc.com",
+      "dateUpdated": "Apr 17, 2018 4:04:32 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
-          "mode": "pieChart",
+          "mode": "stackedAreaChart",
           "height": 300.0,
           "optionOpen": false,
           "keys": [
@@ -474,7 +526,7 @@
       "settings": {
         "params": {
           "limit": "10",
-          "LowerBoundOnTotalVotes": "0"
+          "LowerBoundOnTotalVotes": "1"
         },
         "forms": {
           "LowerBoundOnTotalVotes": {
@@ -484,20 +536,64 @@
           }
         }
       },
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "JOB UI",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.5%3A8088%2Fproxy%2Fapplication_1523968118458_0001/jobs/job?spark\u003dtrue\u0026id\u003d4"
+          ],
+          "interpreterSettingId": "2DATXXMPR9371523633749619"
+        }
+      },
       "paragraphProgress": {
-        "jobs": [],
-        "numCompletedTasks": 0,
-        "numTasks": 0,
+        "jobs": [
+          {
+            "id": 4,
+            "jobUrl": "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.5%3A8088%2Fproxy%2Fapplication_1523968118458_0001/jobs/job?spark\u003dtrue\u0026id\u003d4",
+            "numTasks": 212,
+            "numCompletedTasks": 212,
+            "stages": [
+              {
+                "id": 5,
+                "completed": true,
+                "stageUrl": "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.5%3A8088%2Fproxy%2Fapplication_1523968118458_0001/stages/stage/?id\u003d5\u0026attempt\u003d0",
+                "numCompleteTasks": 12,
+                "numActiveTasks": 0,
+                "numFailedTasks": 0,
+                "numTotalTasks": 12
+              },
+              {
+                "id": 6,
+                "completed": true,
+                "stageUrl": "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.5%3A8088%2Fproxy%2Fapplication_1523968118458_0001/stages/stage/?id\u003d6\u0026attempt\u003d0",
+                "numCompleteTasks": 200,
+                "numActiveTasks": 0,
+                "numFailedTasks": 0,
+                "numTotalTasks": 200
+              }
+            ],
+            "status": "Running"
+          }
+        ],
+        "numCompletedTasks": 212,
+        "numTasks": 212,
         "truncated": false
       },
       "version": "v0",
       "jobName": "paragraph_1517053988502_409364696",
-      "id": "20180127-115308_785965316_q_G5FRE4ZKXB1516650111",
+      "id": "20180127-115308_785965316_q_J8JF4YMWE11523976828",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TABLE",
+        "msg": "overall\tcnt\n1.0\t74246\n2.0\t47671\n3.0\t73429\n4.0\t150575\n5.0\t380040\n"
+      },
       "dateCreated": "Jan 27, 2018 11:53:08 AM",
-      "dateStarted": "Jan 30, 2018 4:20:48 AM",
-      "dateFinished": "Jan 30, 2018 4:21:42 AM",
-      "status": "ERROR",
-      "errorMessage": "",
+      "dateStarted": "Apr 17, 2018 3:59:09 PM",
+      "dateFinished": "Apr 17, 2018 3:59:26 PM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
@@ -524,7 +620,7 @@
         "forms": {}
       },
       "jobName": "paragraph_1515593898988_-1445441110",
-      "id": "20180110-141818_1223639840_q_G5FRE4ZKXB1516650111",
+      "id": "20180110-141818_1223639840_q_J8JF4YMWE11523976828",
       "result": {
         "code": "SUCCESS",
         "type": "HTML",
@@ -538,8 +634,8 @@
     },
     {
       "text": "//FILTER CELL\nvar df \u003d derivedDF.filter(\"totalVotes \u003e 10\")\ndf.createOrReplaceTempView(\"reviews\")",
-      "user": "davidgillen@precocityllc.com",
-      "dateUpdated": "Jan 27, 2018 11:33:40 AM",
+      "user": "mattdavies@precocityllc.com",
+      "dateUpdated": "Apr 17, 2018 4:05:19 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -565,13 +661,18 @@
         "numTasks": 0,
         "truncated": false
       },
+      "version": "v0",
       "jobName": "paragraph_1515594030062_1307801238",
-      "id": "20180110-142030_358578607_q_G5FRE4ZKXB1516650111",
+      "id": "20180110-142030_358578607_q_J8JF4YMWE11523976828",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "\ndf: org.apache.spark.sql.Dataset[org.apache.spark.sql.Row] \u003d [asin: string, helpful: array\u003cbigint\u003e ... 14 more fields]\n"
+      },
       "dateCreated": "Jan 10, 2018 2:20:30 PM",
-      "dateStarted": "Jan 27, 2018 11:33:32 AM",
-      "dateFinished": "Jan 27, 2018 11:33:32 AM",
+      "dateStarted": "Apr 17, 2018 4:05:19 PM",
+      "dateFinished": "Apr 17, 2018 4:05:20 PM",
       "status": "FINISHED",
-      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
@@ -598,7 +699,7 @@
         "forms": {}
       },
       "jobName": "paragraph_1515594249165_-1855129170",
-      "id": "20180110-142409_503381931_q_G5FRE4ZKXB1516650111",
+      "id": "20180110-142409_503381931_q_J8JF4YMWE11523976828",
       "result": {
         "code": "SUCCESS",
         "type": "HTML",
@@ -611,9 +712,9 @@
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "//TOKENIZE CELL\nval regexTokenizer \u003d new RegexTokenizer()\n  .setInputCol(\"fullReview\")\n  .setOutputCol(\"regexOutput\")\n  .setPattern(\"\\\\W\")\nvar tokenizedDF \u003d regexTokenizer.transform(df)\ntokenizedDF.createOrReplaceTempView(\"reviews\")\ntokenizedDF.select(\"asin\",\"fullReview\",\"regexOutput\").show()",
-      "user": "davidgillen@precocityllc.com",
-      "dateUpdated": "Jan 27, 2018 11:34:37 AM",
+      "text": "//TOKENIZE CELL\nval regexTokenizer \u003d new RegexTokenizer()\n  .setInputCol(\"fullReview\")\n  .setOutputCol(\"regexOutput\")\n  .setPattern(\"\\\\W\")\nvar tokenizedDF \u003d regexTokenizer.transform(df)\ntokenizedDF.createOrReplaceTempView(\"reviews\")//\n//tokenizedDF.select(\"asin\",\"fullReview\",\"regexOutput\").show()\ntokenizedDF.show()",
+      "user": "mattdavies@precocityllc.com",
+      "dateUpdated": "Apr 17, 2018 4:09:42 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -627,24 +728,37 @@
         },
         "enabled": true,
         "editorMode": "ace/mode/scala",
-        "tableHide": false
+        "tableHide": false,
+        "lineNumbers": true
       },
       "settings": {
         "params": {},
         "forms": {}
       },
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "JOB UI",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.5%3A8088%2Fproxy%2Fapplication_1523968118458_0001/jobs/job?spark\u003dtrue\u0026id\u003d8"
+          ],
+          "interpreterSettingId": "2DATXXMPR9371523633749619"
+        }
+      },
       "paragraphProgress": {
         "jobs": [
           {
-            "id": 3,
-            "jobUrl": "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.5%3A8088%2Fproxy%2Fapplication_1517051952301_0001/jobs/job?spark\u003dtrue\u0026id\u003d3",
+            "id": 8,
+            "jobUrl": "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.5%3A8088%2Fproxy%2Fapplication_1523968118458_0001/jobs/job?spark\u003dtrue\u0026id\u003d8",
             "numTasks": 1,
             "numCompletedTasks": 1,
             "stages": [
               {
-                "id": 3,
+                "id": 10,
                 "completed": true,
-                "stageUrl": "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.5%3A8088%2Fproxy%2Fapplication_1517051952301_0001/stages/stage/?id\u003d3\u0026attempt\u003d0",
+                "stageUrl": "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.5%3A8088%2Fproxy%2Fapplication_1523968118458_0001/stages/stage/?id\u003d10\u0026attempt\u003d0",
                 "numCompleteTasks": 1,
                 "numActiveTasks": 0,
                 "numFailedTasks": 0,
@@ -658,13 +772,18 @@
         "numTasks": 1,
         "truncated": false
       },
+      "version": "v0",
       "jobName": "paragraph_1515594275729_1287746678",
-      "id": "20180110-142435_197011591_q_G5FRE4ZKXB1516650111",
+      "id": "20180110-142435_197011591_q_J8JF4YMWE11523976828",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "\nregexTokenizer: org.apache.spark.ml.feature.RegexTokenizer \u003d regexTok_74dfccc5d2fb\n\ntokenizedDF: org.apache.spark.sql.DataFrame \u003d [asin: string, helpful: array\u003cbigint\u003e ... 15 more fields]\n+----------+--------+-------+--------------------+-----------+--------------+--------------------+--------------------+--------------+-----------+-------+----------+--------------------+------------------+----------+-----+--------------------+\n|      asin| helpful|overall|          reviewText| reviewTime|    reviewerID|        reviewerName|             summary|unixReviewTime|   Category|upVotes|totalVotes|          fullReview|             score|reviewDate|label|         regexOutput|\n+----------+--------+-------+--------------------+-----------+--------------+--------------------+--------------------+--------------+-----------+-------+----------+--------------------+------------------+----------+-----+--------------------+\n|0528881469|[12, 15]|    1.0|I\u0027m a professiona...|11 25, 2010| AMO214LNFCEI4|     Amazon Customer|   Very Disappointed|    1290643200|Electronics|     12|        15|Very Disappointed...|               0.8|2010-11-25|    0|[very, disappoint...|\n|0528881469|[43, 45]|    3.0|Well, what can I ...| 09 9, 2010|A3N7T0DY83Y4IG|       C. A. Freeman|      1st impression|    1283990400|Electronics|     43|        45|1st impression We...|0.9555555555555556|2010-09-09|    1|[1st, impression,...|\n|0972683275|[15, 19]|    5.0|Quality was excel...| 10 5, 2010|A3QH8VQDE7HZCR|      costaricachris|Real value for th...|    1286236800|Electronics|     15|        19|Real value for th...|0.7894736842105263|2010-10-05|    0|[real, value, for...|\n|0972683275| [8, 18]|    1.0|I checked around ...| 12 1, 2010|A38FGQVJM18OWV|George S. Mitchel...|What a piece of j...|    1291161600|Electronics|      8|        18|What a piece of j...|0.4444444444444444|2010-12-01|    0|[what, a, piece, ...|\n|0972683275|[14, 19]|    5.0|I mounted this in...|09 30, 2010| A7R4R9THNELTP|                  LG|Excellent, at any...|    1285804800|Electronics|     14|        19|Excellent, at any...|0.7368421052631579|2010-09-30|    0|[excellent, at, a...|\n|0972683275|[70, 92]|    3.0|I purchased this ...|12 11, 2010|A27K5RT7VDB7BU|             Stephan|It Works But Coul...|    1292025600|Electronics|     70|        92|It Works But Coul...|0.7608695652173914|2010-12-11|    0|[it, works, but, ...|\n|0972683275|[18, 23]|    5.0|Do not listen to ...|10 12, 2010| AGY0KH2D5G9WH|         Thomas \"TC\"|     Excellent mount|    1286841600|Electronics|     18|        23|Excellent mount D...| 0.782608695652174|2010-10-12|    0|[excellent, mount...|\n|0972683275| [8, 15]|    2.0|Unfortunately, I\u0027...| 09 4, 2010|A25M2X8KHSS2NC|Ultimate Ducky \"U...|Poor Quality Cont...|    1283558400|Electronics|      8|        15|Poor Quality Cont...|0.5333333333333333|2010-09-04|    0|[poor, quality, c...|\n|0972683275|[14, 19]|    1.0|If less money had...| 06 9, 2011|A2ZMEHV9S4FXV5|        venividivici|Junk, sags, wobbl...|    1307577600|Electronics|     14|        19|Junk, sags, wobbl...|0.7368421052631579|2011-06-09|    0|[junk, sags, wobb...|\n|1400501466|[11, 11]|    5.0|I bought this for...|07 15, 2012|A2UL4M5SXL7L0A|         basieswings|Excellent hardwar...|    1342310400|Electronics|     11|        11|Excellent hardwar...|               1.0|2012-07-15|    1|[excellent, hardw...|\n|1400501466|[17, 19]|    5.0|Months later, I a...|02 16, 2012|A2FHM5FB0BXKGA|Dr. Elaine O. Cha...|Outstanding 7\" Ta...|    1329350400|Electronics|     17|        19|Outstanding 7\" Ta...|0.8947368421052632|2012-02-16|    1|[outstanding, 7, ...|\n|1400501466|[33, 39]|    5.0|The Nook Tablet i...| 12 1, 2011|A19N3S7CBSU6O7|OregonBay \" Orego...|         Nook Tablet|    1322697600|Electronics|     33|        39|Nook Tablet The N...|0.8461538461538461|2011-12-01|    1|[nook, tablet, th...|\n|1400501466| [7, 13]|    1.0|The customer supp...|12 19, 2011|A1ZJF8YB4LZ356|              SCCGAC|Tablet Good, supp...|    1324252800|Electronics|      7|        13|Tablet Good, supp...|0.5384615384615384|2011-12-19|    0|[tablet, good, su...|\n|1400501466|[52, 57]|    1.0|Update 2-Sep-13:P...| 01 2, 2012|A2ILMCJBXWF5TS|Steve \"Steve (Wal...|Very Limited Unle...|    1325462400|Electronics|     52|        57|Very Limited Unle...|0.9122807017543859|2012-01-02|    1|[very, limited, u...|\n|1400501466|[11, 20]|    2.0|It accepts up to ...| 12 1, 2011|A1I0MV8SWXSWDQ|William Karoly \"B...|  Memory Card Issues|    1322697600|Electronics|     11|        20|Memory Card Issue...|              0.55|2011-12-01|    0|[memory, card, is...|\n|1400501520|[69, 72]|    5.0|I\u0027ve owned an Ipa...|02 18, 2013|A35FTKYO9UQZWF|         AmazonFever|Great little device!|    1361145600|Electronics|     69|        72|Great little devi...|0.9583333333333334|2013-02-18|    1|[great, little, d...|\n|1400501520|[48, 54]|    4.0|I tried Kindle hd...|12 31, 2012|A1GXOJYENYFP6W|             C. Liao|best screen out o...|    1356912000|Electronics|     48|        54|best screen out o...|0.8888888888888888|2013-12-31|    1|[best, screen, ou...|\n|1400501520|[12, 15]|    3.0|not so happy with...|07 20, 2013|A1BN36SAWCLCIK|        everyday man|Initially liked, ...|    1374278400|Electronics|     12|        15|Initially liked, ...|               0.8|2013-07-20|    0|[initially, liked...|\n|1400501520|[12, 12]|    5.0|Bought a 16 GB on...|10 25, 2013|A36Z1OLH6B0C2I|John Johnson \"Jon...|Great product at ...|    1382659200|Electronics|     12|        12|Great product at ...|               1.0|2013-10-25|    1|[great, product, ...|\n|1400501520|[10, 12]|    5.0|                    |06 29, 2013|A1S2M6SA4OAUNK|               Perry|Best Tablet On A ...|    1372464000|Electronics|     10|        12|Best Tablet On A ...|0.8333333333333334|2013-06-29|    1|[best, tablet, on...|\n+----------+--------+-------+--------------------+-----------+--------------+--------------------+--------------------+--------------+-----------+-------+----------+--------------------+------------------+----------+-----+--------------------+\nonly showing top 20 rows\n\n"
+      },
       "dateCreated": "Jan 10, 2018 2:24:35 PM",
-      "dateStarted": "Jan 27, 2018 11:34:38 AM",
-      "dateFinished": "Jan 27, 2018 11:34:42 AM",
+      "dateStarted": "Apr 17, 2018 4:09:42 PM",
+      "dateFinished": "Apr 17, 2018 4:09:43 PM",
       "status": "FINISHED",
-      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
@@ -691,7 +810,7 @@
         "forms": {}
       },
       "jobName": "paragraph_1515594478576_85866090",
-      "id": "20180110-142758_1907212191_q_G5FRE4ZKXB1516650111",
+      "id": "20180110-142758_1907212191_q_J8JF4YMWE11523976828",
       "result": {
         "code": "SUCCESS",
         "type": "HTML",
@@ -705,8 +824,8 @@
     },
     {
       "text": "//STOPWORD CELL\nvar remover \u003d new StopWordsRemover()\n  .setInputCol(\"regexOutput\")\n  .setOutputCol(\"stopWordsOutput\")\n  \nvar stopWords \u003d Array(\"lens\",\"tv\",\"drive\",\"one\",\"case\",\"2\",\"video\",\"battery\",\"1\",\"screen\",\"unit\",\"camera\",\"usb\",\"3\",\"would\",\"also\",\"card\",\"sound\",\"use\") ++ remover.getStopWords\nremover \u003d remover.setStopWords(stopWords)\nvar filteredDF \u003d remover.transform(tokenizedDF)\nfilteredDF.select(\"asin\",\"regexOutput\",\"stopWordsOutput\").show()",
-      "user": "davidgillen@precocityllc.com",
-      "dateUpdated": "Jan 27, 2018 11:40:04 AM",
+      "user": "mattdavies@precocityllc.com",
+      "dateUpdated": "Apr 17, 2018 4:11:03 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -720,24 +839,37 @@
         },
         "enabled": true,
         "editorMode": "ace/mode/scala",
-        "tableHide": false
+        "tableHide": false,
+        "lineNumbers": true
       },
       "settings": {
         "params": {},
         "forms": {}
       },
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "JOB UI",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.5%3A8088%2Fproxy%2Fapplication_1523968118458_0001/jobs/job?spark\u003dtrue\u0026id\u003d9"
+          ],
+          "interpreterSettingId": "2DATXXMPR9371523633749619"
+        }
+      },
       "paragraphProgress": {
         "jobs": [
           {
-            "id": 4,
-            "jobUrl": "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.5%3A8088%2Fproxy%2Fapplication_1517051952301_0001/jobs/job?spark\u003dtrue\u0026id\u003d4",
+            "id": 9,
+            "jobUrl": "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.5%3A8088%2Fproxy%2Fapplication_1523968118458_0001/jobs/job?spark\u003dtrue\u0026id\u003d9",
             "numTasks": 1,
             "numCompletedTasks": 1,
             "stages": [
               {
-                "id": 4,
+                "id": 11,
                 "completed": true,
-                "stageUrl": "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.5%3A8088%2Fproxy%2Fapplication_1517051952301_0001/stages/stage/?id\u003d4\u0026attempt\u003d0",
+                "stageUrl": "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.5%3A8088%2Fproxy%2Fapplication_1523968118458_0001/stages/stage/?id\u003d11\u0026attempt\u003d0",
                 "numCompleteTasks": 1,
                 "numActiveTasks": 0,
                 "numFailedTasks": 0,
@@ -751,13 +883,18 @@
         "numTasks": 1,
         "truncated": false
       },
+      "version": "v0",
       "jobName": "paragraph_1515594490437_652631868",
-      "id": "20180110-142810_931867535_q_G5FRE4ZKXB1516650111",
+      "id": "20180110-142810_931867535_q_J8JF4YMWE11523976828",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "\nremover: org.apache.spark.ml.feature.StopWordsRemover \u003d stopWords_9959622a35ba\nstopWords: Array[String] \u003d Array(lens, tv, drive, one, case, 2, video, battery, 1, screen, unit, camera, usb, 3, would, also, card, sound, use, i, me, my, myself, we, our, ours, ourselves, you, your, yours, yourself, yourselves, he, him, his, himself, she, her, hers, herself, it, its, itself, they, them, their, theirs, themselves, what, which, who, whom, this, that, these, those, am, is, are, was, were, be, been, being, have, has, had, having, do, does, did, doing, a, an, the, and, but, if, or, because, as, until, while, of, at, by, for, with, about, against, between, into, through, during, before, after, above, below, to, from, up, down, in, out, on, off, over, under, again, further, then, once, here, there, when, where, why, how, all, any, both, each, few, more, most, other, some, suc...\nremover: org.apache.spark.ml.feature.StopWordsRemover \u003d stopWords_9959622a35ba\n\nfilteredDF: org.apache.spark.sql.DataFrame \u003d [asin: string, helpful: array\u003cbigint\u003e ... 16 more fields]\n+----------+--------------------+--------------------+\n|      asin|         regexOutput|     stopWordsOutput|\n+----------+--------------------+--------------------+\n|0528881469|[very, disappoint...|[disappointed, pr...|\n|0528881469|[1st, impression,...|[1st, impression,...|\n|0972683275|[real, value, for...|[real, value, mon...|\n|0972683275|[what, a, piece, ...|[piece, junk, che...|\n|0972683275|[excellent, at, a...|[excellent, price...|\n|0972683275|[it, works, but, ...|[works, could, be...|\n|0972683275|[excellent, mount...|[excellent, mount...|\n|0972683275|[poor, quality, c...|[poor, quality, c...|\n|0972683275|[junk, sags, wobb...|[junk, sags, wobb...|\n|1400501466|[excellent, hardw...|[excellent, hardw...|\n|1400501466|[outstanding, 7, ...|[outstanding, 7, ...|\n|1400501466|[nook, tablet, th...|[nook, tablet, no...|\n|1400501466|[tablet, good, su...|[tablet, good, su...|\n|1400501466|[very, limited, u...|[limited, unless,...|\n|1400501466|[memory, card, is...|[memory, issues, ...|\n|1400501520|[great, little, d...|[great, little, d...|\n|1400501520|[best, screen, ou...|[best, 7, tablets...|\n|1400501520|[initially, liked...|[initially, liked...|\n|1400501520|[great, product, ...|[great, product, ...|\n|1400501520|[best, tablet, on...|[best, tablet, bu...|\n+----------+--------------------+--------------------+\nonly showing top 20 rows\n\n"
+      },
       "dateCreated": "Jan 10, 2018 2:28:10 PM",
-      "dateStarted": "Jan 27, 2018 11:40:04 AM",
-      "dateFinished": "Jan 27, 2018 11:40:06 AM",
+      "dateStarted": "Apr 17, 2018 4:11:04 PM",
+      "dateFinished": "Apr 17, 2018 4:11:06 PM",
       "status": "FINISHED",
-      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
@@ -784,7 +921,7 @@
         "forms": {}
       },
       "jobName": "paragraph_1515614600712_-183019646",
-      "id": "20180110-200320_2022445575_q_G5FRE4ZKXB1516650111",
+      "id": "20180110-200320_2022445575_q_J8JF4YMWE11523976828",
       "result": {
         "code": "SUCCESS",
         "type": "HTML",
@@ -798,8 +935,8 @@
     },
     {
       "text": "//BIGRAM CELL\n\n//Compute # of words in each review just as helper to allow us to filter for reviews that can easily fit on screen\nfilteredDF.createOrReplaceTempView(\"reviews\")\nval filterByLengthUDF \u003d sqlContext.udf.register(\"NumWords\", (x:WrappedArray[String]) \u003d\u003e x.length)\nvar numWordsDF \u003d sqlContext.sql(\"select *, NumWords(stopWordsOutput) as numWords from reviews\")\nnumWordsDF.createOrReplaceTempView(\"reviews\")\n\n//compute bigrams\nimport scala.collection.mutable.WrappedArray\nval bigramTF \u003d new NGram().setN(2).setInputCol(\"stopWordsOutput\").setOutputCol(\"bigrams\")\nval bigramDf \u003d bigramTF.transform(numWordsDF)\nval concat2ArraysUDF \u003d udf { (uni: WrappedArray[String],bi:WrappedArray[String]) \u003d\u003e uni ++ bi }\n//concat words \u0026 bigrams into one column called uniAndBi\nvar newTF \u003d bigramDf.withColumn(\"uniAndBi\",concat2ArraysUDF(bigramDf(\"stopWordsOutput\"), bigramDf(\"bigrams\")))\nnewTF.createOrReplaceTempView(\"reviews\")\nspark.sql(\"select asin, stopWordsOutput,bigrams from reviews where numWords \u003c 10 limit 5\").show(false)",
-      "user": "davidgillen@precocityllc.com",
-      "dateUpdated": "Jan 30, 2018 4:18:55 AM",
+      "user": "mattdavies@precocityllc.com",
+      "dateUpdated": "Apr 17, 2018 4:14:25 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -813,24 +950,37 @@
         },
         "enabled": true,
         "editorMode": "ace/mode/scala",
-        "tableHide": false
+        "tableHide": false,
+        "lineNumbers": true
       },
       "settings": {
         "params": {},
         "forms": {}
       },
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "JOB UI",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.5%3A8088%2Fproxy%2Fapplication_1523968118458_0001/jobs/job?spark\u003dtrue\u0026id\u003d10"
+          ],
+          "interpreterSettingId": "2DATXXMPR9371523633749619"
+        }
+      },
       "paragraphProgress": {
         "jobs": [
           {
-            "id": 6,
-            "jobUrl": "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.5%3A8088%2Fproxy%2Fapplication_1517051952301_0001/jobs/job?spark\u003dtrue\u0026id\u003d6",
+            "id": 10,
+            "jobUrl": "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.5%3A8088%2Fproxy%2Fapplication_1523968118458_0001/jobs/job?spark\u003dtrue\u0026id\u003d10",
             "numTasks": 1,
             "numCompletedTasks": 1,
             "stages": [
               {
-                "id": 6,
+                "id": 12,
                 "completed": true,
-                "stageUrl": "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.5%3A8088%2Fproxy%2Fapplication_1517051952301_0001/stages/stage/?id\u003d6\u0026attempt\u003d0",
+                "stageUrl": "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.5%3A8088%2Fproxy%2Fapplication_1523968118458_0001/stages/stage/?id\u003d12\u0026attempt\u003d0",
                 "numCompleteTasks": 1,
                 "numActiveTasks": 0,
                 "numFailedTasks": 0,
@@ -844,13 +994,18 @@
         "numTasks": 1,
         "truncated": false
       },
+      "version": "v0",
       "jobName": "paragraph_1515601095577_-1568115310",
-      "id": "20180110-161815_1524737661_q_G5FRE4ZKXB1516650111",
+      "id": "20180110-161815_1524737661_q_J8JF4YMWE11523976828",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "\nfilterByLengthUDF: org.apache.spark.sql.expressions.UserDefinedFunction \u003d UserDefinedFunction(\u003cfunction1\u003e,IntegerType,Some(List(ArrayType(StringType,true))))\n\nnumWordsDF: org.apache.spark.sql.DataFrame \u003d [asin: string, helpful: array\u003cbigint\u003e ... 17 more fields]\n\nimport scala.collection.mutable.WrappedArray\n\nbigramTF: org.apache.spark.ml.feature.NGram \u003d ngram_b60cdc761b79\n\nbigramDf: org.apache.spark.sql.DataFrame \u003d [asin: string, helpful: array\u003cbigint\u003e ... 18 more fields]\n\nconcat2ArraysUDF: org.apache.spark.sql.expressions.UserDefinedFunction \u003d UserDefinedFunction(\u003cfunction2\u003e,ArrayType(StringType,true),Some(List(ArrayType(StringType,true), ArrayType(StringType,true))))\n\nnewTF: org.apache.spark.sql.DataFrame \u003d [asin: string, helpful: array\u003cbigint\u003e ... 19 more fields]\n+----------+------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+\n|asin      |stopWordsOutput                                                               |bigrams                                                                                                                               |\n+----------+------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+\n|1400501520|[best, tablet, budget]                                                        |[best tablet, tablet budget]                                                                                                          |\n|B00001OPJZ|[great, machine, quality, excellent, price, easy, highly, recommend, player]  |[great machine, machine quality, quality excellent, excellent price, price easy, easy highly, highly recommend, recommend player]     |\n|B00001OWYM|[really, works, works, clean, prefect, else, said, get]                       |[really works, works works, works clean, clean prefect, prefect else, else said, said get]                                            |\n|B00004SABJ|[great, binoculars, expecting, better, visual, field, binoculars, good, great]|[great binoculars, binoculars expecting, expecting better, better visual, visual field, field binoculars, binoculars good, good great]|\n|B00004T1XK|[unbox, panasonic, rq, 2102, cassette, recorder]                              |[unbox panasonic, panasonic rq, rq 2102, 2102 cassette, cassette recorder]                                                            |\n+----------+------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+\n\n"
+      },
       "dateCreated": "Jan 10, 2018 4:18:15 PM",
-      "dateStarted": "Jan 27, 2018 11:41:09 AM",
-      "dateFinished": "Jan 27, 2018 11:41:11 AM",
+      "dateStarted": "Apr 17, 2018 4:13:25 PM",
+      "dateFinished": "Apr 17, 2018 4:13:30 PM",
       "status": "FINISHED",
-      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
@@ -877,7 +1032,7 @@
         "forms": {}
       },
       "jobName": "paragraph_1515676750187_298409029",
-      "id": "20180111-131910_263021081_q_G5FRE4ZKXB1516650111",
+      "id": "20180111-131910_263021081_q_J8JF4YMWE11523976828",
       "result": {
         "code": "SUCCESS",
         "type": "HTML",
@@ -891,8 +1046,8 @@
     },
     {
       "text": "//TERM FREQUENCY CELL\nvar countTF \u003d new CountVectorizer().setInputCol(\"bigrams\").setOutputCol(\"countFeatures\")\nvar badProducts \u003d newTF.filter(\"overall \u003c 2\")\nvar countModel \u003d countTF.fit(badProducts)\nvar featurizedData \u003d countModel.transform(badProducts)\nfeaturizedData.filter(\"numWords \u003c 50\").select(\"asin\",\"Category\",\"countFeatures\").show(false)",
-      "user": "davidgillen@precocityllc.com",
-      "dateUpdated": "Jan 27, 2018 11:43:40 AM",
+      "user": "mattdavies@precocityllc.com",
+      "dateUpdated": "Apr 17, 2018 4:37:22 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -912,27 +1067,41 @@
         "params": {},
         "forms": {}
       },
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "JOB UI",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.5%3A8088%2Fproxy%2Fapplication_1523968118458_0001/jobs/job?spark\u003dtrue\u0026id\u003d11",
+            "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.5%3A8088%2Fproxy%2Fapplication_1523968118458_0001/jobs/job?spark\u003dtrue\u0026id\u003d12",
+            "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.5%3A8088%2Fproxy%2Fapplication_1523968118458_0001/jobs/job?spark\u003dtrue\u0026id\u003d13"
+          ],
+          "interpreterSettingId": "2DATXXMPR9371523633749619"
+        }
+      },
       "paragraphProgress": {
         "jobs": [
           {
-            "id": 7,
-            "jobUrl": "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.5%3A8088%2Fproxy%2Fapplication_1517051952301_0001/jobs/job?spark\u003dtrue\u0026id\u003d7",
+            "id": 11,
+            "jobUrl": "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.5%3A8088%2Fproxy%2Fapplication_1523968118458_0001/jobs/job?spark\u003dtrue\u0026id\u003d11",
             "numTasks": 24,
             "numCompletedTasks": 24,
             "stages": [
               {
-                "id": 7,
+                "id": 13,
                 "completed": true,
-                "stageUrl": "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.5%3A8088%2Fproxy%2Fapplication_1517051952301_0001/stages/stage/?id\u003d7\u0026attempt\u003d0",
+                "stageUrl": "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.5%3A8088%2Fproxy%2Fapplication_1523968118458_0001/stages/stage/?id\u003d13\u0026attempt\u003d0",
                 "numCompleteTasks": 12,
                 "numActiveTasks": 0,
                 "numFailedTasks": 0,
                 "numTotalTasks": 12
               },
               {
-                "id": 8,
+                "id": 14,
                 "completed": true,
-                "stageUrl": "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.5%3A8088%2Fproxy%2Fapplication_1517051952301_0001/stages/stage/?id\u003d8\u0026attempt\u003d0",
+                "stageUrl": "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.5%3A8088%2Fproxy%2Fapplication_1523968118458_0001/stages/stage/?id\u003d14\u0026attempt\u003d0",
                 "numCompleteTasks": 12,
                 "numActiveTasks": 0,
                 "numFailedTasks": 0,
@@ -942,24 +1111,24 @@
             "status": "Success"
           },
           {
-            "id": 8,
-            "jobUrl": "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.5%3A8088%2Fproxy%2Fapplication_1517051952301_0001/jobs/job?spark\u003dtrue\u0026id\u003d8",
+            "id": 12,
+            "jobUrl": "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.5%3A8088%2Fproxy%2Fapplication_1523968118458_0001/jobs/job?spark\u003dtrue\u0026id\u003d12",
             "numTasks": 24,
             "numCompletedTasks": 12,
             "stages": [
               {
-                "id": 9,
+                "id": 15,
                 "completed": true,
-                "stageUrl": "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.5%3A8088%2Fproxy%2Fapplication_1517051952301_0001/stages/stage/?id\u003d9\u0026attempt\u003d0",
+                "stageUrl": "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.5%3A8088%2Fproxy%2Fapplication_1523968118458_0001/stages/stage/?id\u003d15\u0026attempt\u003d0",
                 "numCompleteTasks": 0,
                 "numActiveTasks": 0,
                 "numFailedTasks": 0,
                 "numTotalTasks": 0
               },
               {
-                "id": 10,
+                "id": 16,
                 "completed": true,
-                "stageUrl": "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.5%3A8088%2Fproxy%2Fapplication_1517051952301_0001/stages/stage/?id\u003d10\u0026attempt\u003d0",
+                "stageUrl": "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.5%3A8088%2Fproxy%2Fapplication_1523968118458_0001/stages/stage/?id\u003d16\u0026attempt\u003d0",
                 "numCompleteTasks": 12,
                 "numActiveTasks": 0,
                 "numFailedTasks": 0,
@@ -969,15 +1138,15 @@
             "status": "Success"
           },
           {
-            "id": 9,
-            "jobUrl": "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.5%3A8088%2Fproxy%2Fapplication_1517051952301_0001/jobs/job?spark\u003dtrue\u0026id\u003d9",
+            "id": 13,
+            "jobUrl": "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.5%3A8088%2Fproxy%2Fapplication_1523968118458_0001/jobs/job?spark\u003dtrue\u0026id\u003d13",
             "numTasks": 1,
             "numCompletedTasks": 1,
             "stages": [
               {
-                "id": 11,
+                "id": 17,
                 "completed": true,
-                "stageUrl": "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.5%3A8088%2Fproxy%2Fapplication_1517051952301_0001/stages/stage/?id\u003d11\u0026attempt\u003d0",
+                "stageUrl": "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.5%3A8088%2Fproxy%2Fapplication_1523968118458_0001/stages/stage/?id\u003d17\u0026attempt\u003d0",
                 "numCompleteTasks": 1,
                 "numActiveTasks": 0,
                 "numFailedTasks": 0,
@@ -991,13 +1160,18 @@
         "numTasks": 49,
         "truncated": false
       },
+      "version": "v0",
       "jobName": "paragraph_1515594859879_-1776919518",
-      "id": "20180110-143419_95178827_q_G5FRE4ZKXB1516650111",
+      "id": "20180110-143419_95178827_q_J8JF4YMWE11523976828",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "\ncountTF: org.apache.spark.ml.feature.CountVectorizer \u003d cntVec_3631a7e00ddf\n\nbadProducts: org.apache.spark.sql.Dataset[org.apache.spark.sql.Row] \u003d [asin: string, helpful: array\u003cbigint\u003e ... 19 more fields]\n\ncountModel: org.apache.spark.ml.feature.CountVectorizerModel \u003d cntVec_3631a7e00ddf\n\nfeaturizedData: org.apache.spark.sql.DataFrame \u003d [asin: string, helpful: array\u003cbigint\u003e ... 20 more fields]\n+----------+-----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+\n|asin      |Category   |countFeatures                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |\n+----------+-----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+\n|1400501466|Electronics|(262144,[12,980,1413,1861,4603,8266,8473,16497,37979,170140,171348],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])                                                                                                                                                                                                                                                                                                                                                                                          |\n|1400532620|Electronics|(262144,[779,1589,1797,3702,12235,15618,19879,24602,35888,38518,38871,41035,50157,61184,77326,80276,86772,87929,92080,98009,98908,103952,120228,122976,135714,136075,136210,136569,139415,142047,151555,155004,155708,161432,162373,173019,173967,174222,176695,176999,178659,178918,180048,183895,186028,186301],[1.0,1.0,1.0,1.0,2.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])|\n|1400532655|Electronics|(262144,[190,1178,1861,4521,4872,8473,9435,27754,36633,43035,62832,80414,81367,82390,82535,94337,120243,128870,130804,169159,175148,199885,227299,251191],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])                                                                                                                                                                                                                                                |\n|1400698987|Electronics|(262144,[1256,1861,2113,2800,2976,4126,10365,12022,17684,21870,36025,37697,38153,51745,66166,71432,76312,100327,114996,116375,121106,124899,139961,156179,181446,185748],[2.0,1.0,2.0,1.0,1.0,2.0,1.0,1.0,1.0,1.0,1.0,1.0,2.0,2.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])                                                                                                                                                                                                                         |\n|6301977173|Electronics|(262144,[360,18981,29977,36196,65226,85184,99054,120046,158035,252240,258856],[1.0,1.0,1.0,2.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])                                                                                                                                                                                                                                                                                                                                                                                |\n|9573212919|Electronics|(262144,[716,2534,5028,5785,15823,17412,24246,25168,28699,34005,36043,44736,47313,53694,94113,117041,188200],[1.0,1.0,1.0,2.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,2.0,1.0,1.0,1.0,1.0])                                                                                                                                                                                                                                                                                                                         |\n|9575871979|Electronics|(262144,[0,1263,1413,4679,9240,9329,19804,20793,21775,41226,42553,53757,58700,67522,102762,113005,142057,162238,173165,184863,255374],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])                                                                                                                                                                                                                                                                                |\n|B000001OMT|Electronics|(262144,[263,328,2166,2424,4395,10532,15283,18342,42868,109451,130573,141061,147486,173043,177130,180189,182799,236597],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,2.0,2.0,2.0,2.0,2.0,1.0,1.0])                                                                                                                                                                                                                                                                                                          |\n|B00000J08Q|Electronics|(262144,[2,53,363,364,4647,5263,8065,8924,12332,23401,70551,86237,94751,234292],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])                                                                                                                                                                                                                                                                                                                                                                  |\n|B00000J0AR|Electronics|(262144,[10790,21367,71126,74572,92577,103806,105239,139616,140531,195835,211220],[1.0,1.0,3.0,1.0,1.0,1.0,1.0,2.0,1.0,1.0,1.0])                                                                                                                                                                                                                                                                                                                                                                            |\n|B00000J1V5|Electronics|(262144,[665,1721,3078,4034,4961,6122,9651,12714,19939,25726,25759,32605,81836,140180,149665,221674],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])                                                                                                                                                                                                                                                                                                                                     |\n|B00000JBIA|Electronics|(262144,[254,849,1209,1282,5269,11667,15720,32817,33236,57711,71159,86230,87214,104529,111350,128214,134726,149326,252135],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])                                                                                                                                                                                                                                                                                                   |\n|B00000JBLJ|Electronics|(262144,[3092,5244,6539,8098,11465,15426,99652,138505,161478],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])                                                                                                                                                                                                                                                                                                                                                                                                        |\n|B00000JDF6|Electronics|(262144,[21,59,3444,4000,5330,5846,8988,13073,13545,13944,23864,27250,56725,57794,59137,68927,75645,104629,110655,122310,134730,136319,147768,182669,185589,232728,239159],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,2.0,1.0,1.0,1.0,1.0,2.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])                                                                                                                                                                                                                   |\n|B00000JGN9|Electronics|(262144,[9,43,282,1084,4350,7476,11232,23692,30063,41512,46702,51270,59610,77714,115843,177466,234911],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])                                                                                                                                                                                                                                                                                                                               |\n|B00000JSGF|Electronics|(262144,[13,212,1881,2494,3706,4497,24659,34372,89847,95593,149662,150457,179968],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])                                                                                                                                                                                                                                                                                                                                                                    |\n|B00000JYWQ|Electronics|(262144,[154,755,1511,1558,1845,2591,4280,19917,20196,44863,46089,46189,48187,49948,66748,103218,104148,122633,124046,124458,131618,143633,170100,196800,206790,229591,240178,241393],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])                                                                                                                                                                                                    |\n|B00000K2YR|Electronics|(262144,[3437,7184,35816,97159,180554,229408],[1.0,1.0,1.0,1.0,1.0,1.0])                                                                                                                                                                                                                                                                                                                                                                                                                                    |\n|B00000K2YR|Electronics|(262144,[2,19,1102,2815,3381,3539,3591,9736,17503,18274,20574,23090,24879,32499,49725,60045,63775,65252,73750,75347,82439,86164,88800,96087,140495,176241,181467,205725],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])                                                                                                                                                                                                                 |\n|B00001P4XH|Electronics|(262144,[30,112,6271,8721,11584,37077,50475,59921,68899,136024,140447,141897,154032,157094],[1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0])                                                                                                                                                                                                                                                                                                                                                      |\n+----------+-----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+\nonly showing top 20 rows\n\n"
+      },
       "dateCreated": "Jan 10, 2018 2:34:19 PM",
-      "dateStarted": "Jan 27, 2018 11:41:54 AM",
-      "dateFinished": "Jan 27, 2018 11:42:13 AM",
+      "dateStarted": "Apr 17, 2018 4:37:22 PM",
+      "dateFinished": "Apr 17, 2018 4:37:48 PM",
       "status": "FINISHED",
-      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
@@ -1024,7 +1198,7 @@
         "forms": {}
       },
       "jobName": "paragraph_1515682444285_1152855829",
-      "id": "20180111-145404_1950049737_q_G5FRE4ZKXB1516650111",
+      "id": "20180111-145404_1950049737_q_J8JF4YMWE11523976828",
       "result": {
         "code": "SUCCESS",
         "type": "HTML",
@@ -1060,7 +1234,7 @@
         "forms": {}
       },
       "jobName": "paragraph_1515682669292_1414806889",
-      "id": "20180111-145749_998476415_q_G5FRE4ZKXB1516650111",
+      "id": "20180111-145749_998476415_q_J8JF4YMWE11523976828",
       "result": {
         "code": "SUCCESS",
         "type": "HTML",
@@ -1074,8 +1248,8 @@
     },
     {
       "text": "//MOST COMMON BIGRAMS OF BAD PRODUCTS CELL\nvar wordsRDD \u003d sc.parallelize(countModel.vocabulary)\nvar wordDF \u003d wordsRDD.zipWithIndex().toDF(\"word\",\"rank\")\nwordDF.show(40,false)",
-      "user": "davidgillen@precocityllc.com",
-      "dateUpdated": "Jan 27, 2018 11:46:43 AM",
+      "user": "mattdavies@precocityllc.com",
+      "dateUpdated": "Apr 17, 2018 4:38:36 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -1095,36 +1269,49 @@
         "params": {},
         "forms": {}
       },
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "JOB UI",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.5%3A8088%2Fproxy%2Fapplication_1523968118458_0001/jobs/job?spark\u003dtrue\u0026id\u003d14",
+            "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.5%3A8088%2Fproxy%2Fapplication_1523968118458_0001/jobs/job?spark\u003dtrue\u0026id\u003d15"
+          ],
+          "interpreterSettingId": "2DATXXMPR9371523633749619"
+        }
+      },
       "paragraphProgress": {
         "jobs": [
           {
-            "id": 10,
-            "jobUrl": "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.5%3A8088%2Fproxy%2Fapplication_1517051952301_0001/jobs/job?spark\u003dtrue\u0026id\u003d10",
-            "numTasks": 7,
-            "numCompletedTasks": 7,
+            "id": 14,
+            "jobUrl": "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.5%3A8088%2Fproxy%2Fapplication_1523968118458_0001/jobs/job?spark\u003dtrue\u0026id\u003d14",
+            "numTasks": 3,
+            "numCompletedTasks": 3,
             "stages": [
               {
-                "id": 12,
+                "id": 18,
                 "completed": true,
-                "stageUrl": "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.5%3A8088%2Fproxy%2Fapplication_1517051952301_0001/stages/stage/?id\u003d12\u0026attempt\u003d0",
-                "numCompleteTasks": 7,
+                "stageUrl": "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.5%3A8088%2Fproxy%2Fapplication_1523968118458_0001/stages/stage/?id\u003d18\u0026attempt\u003d0",
+                "numCompleteTasks": 3,
                 "numActiveTasks": 0,
                 "numFailedTasks": 0,
-                "numTotalTasks": 7
+                "numTotalTasks": 3
               }
             ],
             "status": "Success"
           },
           {
-            "id": 11,
-            "jobUrl": "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.5%3A8088%2Fproxy%2Fapplication_1517051952301_0001/jobs/job?spark\u003dtrue\u0026id\u003d11",
+            "id": 15,
+            "jobUrl": "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.5%3A8088%2Fproxy%2Fapplication_1523968118458_0001/jobs/job?spark\u003dtrue\u0026id\u003d15",
             "numTasks": 1,
             "numCompletedTasks": 1,
             "stages": [
               {
-                "id": 13,
+                "id": 19,
                 "completed": true,
-                "stageUrl": "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.5%3A8088%2Fproxy%2Fapplication_1517051952301_0001/stages/stage/?id\u003d13\u0026attempt\u003d0",
+                "stageUrl": "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.5%3A8088%2Fproxy%2Fapplication_1523968118458_0001/stages/stage/?id\u003d19\u0026attempt\u003d0",
                 "numCompleteTasks": 1,
                 "numActiveTasks": 0,
                 "numFailedTasks": 0,
@@ -1134,17 +1321,22 @@
             "status": "Success"
           }
         ],
-        "numCompletedTasks": 8,
-        "numTasks": 8,
+        "numCompletedTasks": 4,
+        "numTasks": 4,
         "truncated": false
       },
+      "version": "v0",
       "jobName": "paragraph_1515595679847_-1770226666",
-      "id": "20180110-144759_1956047491_q_G5FRE4ZKXB1516650111",
+      "id": "20180110-144759_1956047491_q_J8JF4YMWE11523976828",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "\nwordsRDD: org.apache.spark.rdd.RDD[String] \u003d ParallelCollectionRDD[64] at parallelize at \u003cconsole\u003e:75\n\nwordDF: org.apache.spark.sql.DataFrame \u003d [word: string, rank: bigint]\n+-----------------+----+\n|word             |rank|\n+-----------------+----+\n|customer service |0   |\n|tech support     |1   |\n|waste money      |2   |\n|even though      |3   |\n|windows 7        |4   |\n|blu ray          |5   |\n|much better      |6   |\n|windows 8        |7   |\n|every time       |8   |\n|stay away        |9   |\n|stopped working  |10  |\n|piece junk       |11  |\n|customer support |12  |\n|brand new        |13  |\n|going back       |14  |\n|make sure        |15  |\n|looks like       |16  |\n|picture quality  |17  |\n|dvd player       |18  |\n|poor quality     |19  |\n|send back        |20  |\n|buyer beware     |21  |\n|save money       |22  |\n|sent back        |23  |\n|could get        |24  |\n|year old         |25  |\n|quality control  |26  |\n|first time       |27  |\n|waste time       |28  |\n|buy another      |29  |\n|worked fine      |30  |\n|amazon com       |31  |\n|bottom line      |32  |\n|web site         |33  |\n|something else   |34  |\n|never buy        |35  |\n|technical support|36  |\n|get work         |37  |\n|5 stars          |38  |\n|operating system |39  |\n+-----------------+----+\nonly showing top 40 rows\n\n"
+      },
       "dateCreated": "Jan 10, 2018 2:47:59 PM",
-      "dateStarted": "Jan 27, 2018 11:45:18 AM",
-      "dateFinished": "Jan 27, 2018 11:45:19 AM",
+      "dateStarted": "Apr 17, 2018 4:38:36 PM",
+      "dateFinished": "Apr 17, 2018 4:38:38 PM",
       "status": "FINISHED",
-      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
@@ -1171,7 +1363,7 @@
         "forms": {}
       },
       "jobName": "paragraph_1515682850787_-1572555426",
-      "id": "20180111-150050_1147079889_q_G5FRE4ZKXB1516650111",
+      "id": "20180111-150050_1147079889_q_J8JF4YMWE11523976828",
       "result": {
         "code": "SUCCESS",
         "type": "HTML",
@@ -1207,7 +1399,7 @@
         "forms": {}
       },
       "jobName": "paragraph_1515683224901_-793498032",
-      "id": "20180111-150704_2032838349_q_G5FRE4ZKXB1516650111",
+      "id": "20180111-150704_2032838349_q_J8JF4YMWE11523976828",
       "result": {
         "code": "SUCCESS",
         "type": "HTML",
@@ -1220,9 +1412,9 @@
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "//MOST COMMON BIGRAMS OF GOOD PRODUCTS CELL\nvar goodTF \u003d new CountVectorizer().setInputCol(\"bigrams\").setOutputCol(\"countFeatures\")\nvar goodProducts \u003d newTF.filter(\"overall \u003e 4\")\nvar goodTFModel \u003d goodTF.fit(goodProducts)\nvar bigramsRDD \u003d sc.parallelize(goodTFModel.vocabulary)\nvar bigramDF \u003d bigramsRDD.zipWithIndex().toDF(\"bigram\",\"rank\")\nbigramDF.show(20,false)",
-      "user": "davidgillen@precocityllc.com",
-      "dateUpdated": "Jan 27, 2018 11:47:17 AM",
+      "text": "//MOST COMMON BIGRAMS OF GOOD PRODUCTS CELL\nvar goodTF \u003d new CountVectorizer().setInputCol(\"bigrams\").setOutputCol(\"countFeatures\")\nvar goodProducts \u003d newTF.filter(\"overall \u003e 4\")\nvar goodTFModel \u003d goodTF.fit(goodProducts)\nvar bigramsRDD \u003d sc.parallelize(goodTFModel.vocabulary)\nvar bigramDF \u003d bigramsRDD.zipWithIndex().toDF(\"bigram\",\"index\")\nbigramDF.show(20,false)",
+      "user": "mattdavies@precocityllc.com",
+      "dateUpdated": "Apr 17, 2018 4:40:43 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -1242,27 +1434,42 @@
         "params": {},
         "forms": {}
       },
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "JOB UI",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.5%3A8088%2Fproxy%2Fapplication_1523968118458_0001/jobs/job?spark\u003dtrue\u0026id\u003d16",
+            "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.5%3A8088%2Fproxy%2Fapplication_1523968118458_0001/jobs/job?spark\u003dtrue\u0026id\u003d17",
+            "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.5%3A8088%2Fproxy%2Fapplication_1523968118458_0001/jobs/job?spark\u003dtrue\u0026id\u003d18",
+            "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.5%3A8088%2Fproxy%2Fapplication_1523968118458_0001/jobs/job?spark\u003dtrue\u0026id\u003d19"
+          ],
+          "interpreterSettingId": "2DATXXMPR9371523633749619"
+        }
+      },
       "paragraphProgress": {
         "jobs": [
           {
-            "id": 12,
-            "jobUrl": "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.5%3A8088%2Fproxy%2Fapplication_1517051952301_0001/jobs/job?spark\u003dtrue\u0026id\u003d12",
+            "id": 16,
+            "jobUrl": "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.5%3A8088%2Fproxy%2Fapplication_1523968118458_0001/jobs/job?spark\u003dtrue\u0026id\u003d16",
             "numTasks": 24,
             "numCompletedTasks": 24,
             "stages": [
               {
-                "id": 15,
+                "id": 20,
                 "completed": true,
-                "stageUrl": "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.5%3A8088%2Fproxy%2Fapplication_1517051952301_0001/stages/stage/?id\u003d15\u0026attempt\u003d0",
+                "stageUrl": "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.5%3A8088%2Fproxy%2Fapplication_1523968118458_0001/stages/stage/?id\u003d20\u0026attempt\u003d0",
                 "numCompleteTasks": 12,
                 "numActiveTasks": 0,
                 "numFailedTasks": 0,
                 "numTotalTasks": 12
               },
               {
-                "id": 14,
+                "id": 21,
                 "completed": true,
-                "stageUrl": "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.5%3A8088%2Fproxy%2Fapplication_1517051952301_0001/stages/stage/?id\u003d14\u0026attempt\u003d0",
+                "stageUrl": "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.5%3A8088%2Fproxy%2Fapplication_1523968118458_0001/stages/stage/?id\u003d21\u0026attempt\u003d0",
                 "numCompleteTasks": 12,
                 "numActiveTasks": 0,
                 "numFailedTasks": 0,
@@ -1272,24 +1479,24 @@
             "status": "Success"
           },
           {
-            "id": 13,
-            "jobUrl": "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.5%3A8088%2Fproxy%2Fapplication_1517051952301_0001/jobs/job?spark\u003dtrue\u0026id\u003d13",
+            "id": 17,
+            "jobUrl": "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.5%3A8088%2Fproxy%2Fapplication_1523968118458_0001/jobs/job?spark\u003dtrue\u0026id\u003d17",
             "numTasks": 24,
             "numCompletedTasks": 12,
             "stages": [
               {
-                "id": 16,
+                "id": 22,
                 "completed": true,
-                "stageUrl": "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.5%3A8088%2Fproxy%2Fapplication_1517051952301_0001/stages/stage/?id\u003d16\u0026attempt\u003d0",
+                "stageUrl": "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.5%3A8088%2Fproxy%2Fapplication_1523968118458_0001/stages/stage/?id\u003d22\u0026attempt\u003d0",
                 "numCompleteTasks": 0,
                 "numActiveTasks": 0,
                 "numFailedTasks": 0,
                 "numTotalTasks": 0
               },
               {
-                "id": 17,
+                "id": 23,
                 "completed": true,
-                "stageUrl": "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.5%3A8088%2Fproxy%2Fapplication_1517051952301_0001/stages/stage/?id\u003d17\u0026attempt\u003d0",
+                "stageUrl": "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.5%3A8088%2Fproxy%2Fapplication_1523968118458_0001/stages/stage/?id\u003d23\u0026attempt\u003d0",
                 "numCompleteTasks": 12,
                 "numActiveTasks": 0,
                 "numFailedTasks": 0,
@@ -1299,33 +1506,33 @@
             "status": "Success"
           },
           {
-            "id": 14,
-            "jobUrl": "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.5%3A8088%2Fproxy%2Fapplication_1517051952301_0001/jobs/job?spark\u003dtrue\u0026id\u003d14",
-            "numTasks": 7,
-            "numCompletedTasks": 7,
+            "id": 18,
+            "jobUrl": "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.5%3A8088%2Fproxy%2Fapplication_1523968118458_0001/jobs/job?spark\u003dtrue\u0026id\u003d18",
+            "numTasks": 3,
+            "numCompletedTasks": 3,
             "stages": [
               {
-                "id": 18,
+                "id": 24,
                 "completed": true,
-                "stageUrl": "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.5%3A8088%2Fproxy%2Fapplication_1517051952301_0001/stages/stage/?id\u003d18\u0026attempt\u003d0",
-                "numCompleteTasks": 7,
+                "stageUrl": "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.5%3A8088%2Fproxy%2Fapplication_1523968118458_0001/stages/stage/?id\u003d24\u0026attempt\u003d0",
+                "numCompleteTasks": 3,
                 "numActiveTasks": 0,
                 "numFailedTasks": 0,
-                "numTotalTasks": 7
+                "numTotalTasks": 3
               }
             ],
             "status": "Success"
           },
           {
-            "id": 15,
-            "jobUrl": "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.5%3A8088%2Fproxy%2Fapplication_1517051952301_0001/jobs/job?spark\u003dtrue\u0026id\u003d15",
+            "id": 19,
+            "jobUrl": "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.5%3A8088%2Fproxy%2Fapplication_1523968118458_0001/jobs/job?spark\u003dtrue\u0026id\u003d19",
             "numTasks": 1,
             "numCompletedTasks": 1,
             "stages": [
               {
-                "id": 19,
+                "id": 25,
                 "completed": true,
-                "stageUrl": "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.5%3A8088%2Fproxy%2Fapplication_1517051952301_0001/stages/stage/?id\u003d19\u0026attempt\u003d0",
+                "stageUrl": "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.5%3A8088%2Fproxy%2Fapplication_1523968118458_0001/stages/stage/?id\u003d25\u0026attempt\u003d0",
                 "numCompleteTasks": 1,
                 "numActiveTasks": 0,
                 "numFailedTasks": 0,
@@ -1335,17 +1542,22 @@
             "status": "Success"
           }
         ],
-        "numCompletedTasks": 44,
-        "numTasks": 56,
+        "numCompletedTasks": 40,
+        "numTasks": 52,
         "truncated": false
       },
+      "version": "v0",
       "jobName": "paragraph_1515683277484_384895904",
-      "id": "20180111-150757_504976278_q_G5FRE4ZKXB1516650111",
+      "id": "20180111-150757_504976278_q_J8JF4YMWE11523976828",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "\ngoodTF: org.apache.spark.ml.feature.CountVectorizer \u003d cntVec_4e9f3d80c37d\n\ngoodProducts: org.apache.spark.sql.Dataset[org.apache.spark.sql.Row] \u003d [asin: string, helpful: array\u003cbigint\u003e ... 19 more fields]\n\ngoodTFModel: org.apache.spark.ml.feature.CountVectorizerModel \u003d cntVec_4e9f3d80c37d\n\nbigramsRDD: org.apache.spark.rdd.RDD[String] \u003d ParallelCollectionRDD[79] at parallelize at \u003cconsole\u003e:74\n\nbigramDF: org.apache.spark.sql.DataFrame \u003d [bigram: string, index: bigint]\n+----------------+-----+\n|bigram          |index|\n+----------------+-----+\n|blu ray         |0    |\n|low light       |1    |\n|much better     |2    |\n|works great     |3    |\n|picture quality |4    |\n|highly recommend|5    |\n|image quality   |6    |\n|make sure       |7    |\n|works well      |8    |\n|high quality    |9    |\n|point shoot     |10   |\n|even though     |11   |\n|windows 7       |12   |\n|dvd player      |13   |\n|5 stars         |14   |\n|f 8             |15   |\n|high end        |16   |\n|build quality   |17   |\n|wide angle      |18   |\n|windows 8       |19   |\n+----------------+-----+\nonly showing top 20 rows\n\n"
+      },
       "dateCreated": "Jan 11, 2018 3:07:57 PM",
-      "dateStarted": "Jan 27, 2018 11:46:36 AM",
-      "dateFinished": "Jan 27, 2018 11:46:57 AM",
+      "dateStarted": "Apr 17, 2018 4:40:43 PM",
+      "dateFinished": "Apr 17, 2018 4:41:13 PM",
       "status": "FINISHED",
-      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
@@ -1372,7 +1584,7 @@
         "forms": {}
       },
       "jobName": "paragraph_1515696937382_913521314",
-      "id": "20180111-185537_1951062752_q_G5FRE4ZKXB1516650111",
+      "id": "20180111-185537_1951062752_q_J8JF4YMWE11523976828",
       "result": {
         "code": "SUCCESS",
         "type": "HTML",
@@ -1408,7 +1620,7 @@
         "forms": {}
       },
       "jobName": "paragraph_1515786151456_-1593875224",
-      "id": "20180112-194231_1575610508_q_G5FRE4ZKXB1516650111",
+      "id": "20180112-194231_1575610508_q_J8JF4YMWE11523976828",
       "result": {
         "code": "SUCCESS",
         "type": "HTML",
@@ -1422,8 +1634,8 @@
     },
     {
       "text": "//IDF ASCENDING ORDER\nvar featurizedData \u003d goodTFModel.transform(goodProducts)\nvar idf \u003d new IDF().setInputCol(\"countFeatures\").setOutputCol(\"idfFeatures\")\nvar idfModel \u003d idf.fit(featurizedData)\nvar rescaledData \u003d idfModel.transform(featurizedData)\nvar rdd \u003d rescaledData.rdd.map(row \u003d\u003e (row.getAs[SparseVector](\"countFeatures\").indices,row.getAs[SparseVector](\"countFeatures\").values,row.getAs[SparseVector](\"idfFeatures\").values))\nvar newRdd \u003d rdd.flatMap{case (as,bs,cs) \u003d\u003e (as zip bs zip cs).map{case ((a,b), c) \u003d\u003e (a,b,c)}}\nvar combDF \u003d newRdd.toDF(\"index\",\"count\",\"tfidf\")\nvar aggDF \u003d combDF.groupBy(\"index\").agg(sum(\"count\").alias(\"tf\"),avg(\"tfidf\").alias(\"meanTFIDF\"))\naggDF \u003d bigramDF.join(aggDF,\"index\")\naggDF.sort($\"meanTFIDF\".asc).show()",
-      "user": "davidgillen@precocityllc.com",
-      "dateUpdated": "Jan 27, 2018 11:48:17 AM",
+      "user": "mattdavies@precocityllc.com",
+      "dateUpdated": "Apr 17, 2018 4:42:21 PM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -1442,45 +1654,67 @@
         "params": {},
         "forms": {}
       },
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "JOB UI",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.5%3A8088%2Fproxy%2Fapplication_1523968118458_0001/jobs/job?spark\u003dtrue\u0026id\u003d20",
+            "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.5%3A8088%2Fproxy%2Fapplication_1523968118458_0001/jobs/job?spark\u003dtrue\u0026id\u003d21"
+          ],
+          "interpreterSettingId": "2DATXXMPR9371523633749619"
+        }
+      },
       "paragraphProgress": {
         "jobs": [
           {
-            "id": 19,
-            "jobUrl": "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.9%3A8088%2Fproxy%2Fapplication_1516630010812_0001/jobs/job?spark\u003dtrue\u0026id\u003d19",
+            "id": 20,
+            "jobUrl": "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.5%3A8088%2Fproxy%2Fapplication_1523968118458_0001/jobs/job?spark\u003dtrue\u0026id\u003d20",
             "numTasks": 15,
             "numCompletedTasks": 15,
             "stages": [
               {
-                "id": 24,
+                "id": 27,
                 "completed": true,
-                "stageUrl": "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.9%3A8088%2Fproxy%2Fapplication_1516630010812_0001/stages/stage/?id\u003d24\u0026attempt\u003d0",
-                "numCompleteTasks": 12,
-                "numActiveTasks": 0,
-                "numFailedTasks": 0,
-                "numTotalTasks": 12
-              },
-              {
-                "id": 25,
-                "completed": true,
-                "stageUrl": "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.9%3A8088%2Fproxy%2Fapplication_1516630010812_0001/stages/stage/?id\u003d25\u0026attempt\u003d0",
+                "stageUrl": "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.5%3A8088%2Fproxy%2Fapplication_1523968118458_0001/stages/stage/?id\u003d27\u0026attempt\u003d0",
                 "numCompleteTasks": 3,
                 "numActiveTasks": 0,
                 "numFailedTasks": 0,
                 "numTotalTasks": 3
+              },
+              {
+                "id": 26,
+                "completed": true,
+                "stageUrl": "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.5%3A8088%2Fproxy%2Fapplication_1523968118458_0001/stages/stage/?id\u003d26\u0026attempt\u003d0",
+                "numCompleteTasks": 12,
+                "numActiveTasks": 0,
+                "numFailedTasks": 0,
+                "numTotalTasks": 12
               }
             ],
             "status": "Success"
           },
           {
-            "id": 20,
-            "jobUrl": "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.9%3A8088%2Fproxy%2Fapplication_1516630010812_0001/jobs/job?spark\u003dtrue\u0026id\u003d20",
-            "numTasks": 420,
-            "numCompletedTasks": 420,
+            "id": 21,
+            "jobUrl": "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.5%3A8088%2Fproxy%2Fapplication_1523968118458_0001/jobs/job?spark\u003dtrue\u0026id\u003d21",
+            "numTasks": 416,
+            "numCompletedTasks": 416,
             "stages": [
               {
-                "id": 27,
+                "id": 30,
                 "completed": true,
-                "stageUrl": "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.9%3A8088%2Fproxy%2Fapplication_1516630010812_0001/stages/stage/?id\u003d27\u0026attempt\u003d0",
+                "stageUrl": "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.5%3A8088%2Fproxy%2Fapplication_1523968118458_0001/stages/stage/?id\u003d30\u0026attempt\u003d0",
+                "numCompleteTasks": 4,
+                "numActiveTasks": 0,
+                "numFailedTasks": 0,
+                "numTotalTasks": 4
+              },
+              {
+                "id": 31,
+                "completed": true,
+                "stageUrl": "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.5%3A8088%2Fproxy%2Fapplication_1523968118458_0001/stages/stage/?id\u003d31\u0026attempt\u003d0",
                 "numCompleteTasks": 200,
                 "numActiveTasks": 0,
                 "numFailedTasks": 0,
@@ -1489,45 +1723,41 @@
               {
                 "id": 28,
                 "completed": true,
-                "stageUrl": "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.9%3A8088%2Fproxy%2Fapplication_1516630010812_0001/stages/stage/?id\u003d28\u0026attempt\u003d0",
-                "numCompleteTasks": 8,
-                "numActiveTasks": 0,
-                "numFailedTasks": 0,
-                "numTotalTasks": 8
-              },
-              {
-                "id": 29,
-                "completed": true,
-                "stageUrl": "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.9%3A8088%2Fproxy%2Fapplication_1516630010812_0001/stages/stage/?id\u003d29\u0026attempt\u003d0",
-                "numCompleteTasks": 200,
-                "numActiveTasks": 0,
-                "numFailedTasks": 0,
-                "numTotalTasks": 200
-              },
-              {
-                "id": 26,
-                "completed": true,
-                "stageUrl": "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.9%3A8088%2Fproxy%2Fapplication_1516630010812_0001/stages/stage/?id\u003d26\u0026attempt\u003d0",
+                "stageUrl": "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.5%3A8088%2Fproxy%2Fapplication_1523968118458_0001/stages/stage/?id\u003d28\u0026attempt\u003d0",
                 "numCompleteTasks": 12,
                 "numActiveTasks": 0,
                 "numFailedTasks": 0,
                 "numTotalTasks": 12
+              },
+              {
+                "id": 29,
+                "completed": true,
+                "stageUrl": "https://azure.qubole.com/cluster-proxy?encodedUrl\u003dhttp%3A%2F%2F10.0.0.5%3A8088%2Fproxy%2Fapplication_1523968118458_0001/stages/stage/?id\u003d29\u0026attempt\u003d0",
+                "numCompleteTasks": 200,
+                "numActiveTasks": 0,
+                "numFailedTasks": 0,
+                "numTotalTasks": 200
               }
             ],
             "status": "Success"
           }
         ],
-        "numCompletedTasks": 435,
-        "numTasks": 435,
+        "numCompletedTasks": 431,
+        "numTasks": 431,
         "truncated": false
       },
+      "version": "v0",
       "jobName": "paragraph_1514926961944_-1524740743",
-      "id": "20180102-210241_267837947_q_G5FRE4ZKXB1516650111",
+      "id": "20180102-210241_267837947_q_J8JF4YMWE11523976828",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "\nfeaturizedData: org.apache.spark.sql.DataFrame \u003d [asin: string, helpful: array\u003cbigint\u003e ... 20 more fields]\n\nidf: org.apache.spark.ml.feature.IDF \u003d idf_827d47acc74c\n\nidfModel: org.apache.spark.ml.feature.IDFModel \u003d idf_827d47acc74c\n\nrescaledData: org.apache.spark.sql.DataFrame \u003d [asin: string, helpful: array\u003cbigint\u003e ... 21 more fields]\n\nrdd: org.apache.spark.rdd.RDD[(Array[Int], Array[Double], Array[Double])] \u003d MapPartitionsRDD[97] at map at \u003cconsole\u003e:80\n\nnewRdd: org.apache.spark.rdd.RDD[(Int, Double, Double)] \u003d MapPartitionsRDD[98] at flatMap at \u003cconsole\u003e:82\n\ncombDF: org.apache.spark.sql.DataFrame \u003d [index: int, count: double ... 1 more field]\n\naggDF: org.apache.spark.sql.DataFrame \u003d [index: int, tf: double ... 1 more field]\n\naggDF: org.apache.spark.sql.DataFrame \u003d [index: bigint, bigram: string ... 2 more fields]\n+-----+------------------+------+------------------+\n|index|            bigram|    tf|         meanTFIDF|\n+-----+------------------+------+------------------+\n|    5|  highly recommend|2944.0| 2.887731338900264|\n|    2|       much better|3379.0| 3.095701759122797|\n|    3|       works great|3256.0| 3.132800914234323|\n|    8|        works well|2612.0| 3.375201059240233|\n|    7|         make sure|2678.0|3.5199260320085335|\n|   11|       even though|2126.0|3.5340810656579738|\n|   24|highly recommended|1486.0|3.5884998999138236|\n|    9|      high quality|2576.0|3.6342942107399376|\n|   22|         long time|1509.0|3.6807178200827395|\n|   33|       bottom line|1282.0| 3.733440321960813|\n|   27|       great price|1360.0|3.7901279282347344|\n|   31|         years ago|1298.0|3.8398002085945215|\n|   35|        looks like|1267.0|3.8655290329175025|\n|   30|        first time|1308.0|3.8693826447162087|\n|   38|       even better|1226.0|3.8731958034340996|\n|   14|           5 stars|1900.0|3.8814531092402893|\n|   56|        well worth|1066.0| 3.914731626603142|\n|   25|       pretty good|1456.0| 3.922770928914588|\n|   28|       really like|1355.0|3.9256077085117758|\n|   36|         work well|1260.0|3.9413952992298316|\n+-----+------------------+------+------------------+\nonly showing top 20 rows\n\n"
+      },
       "dateCreated": "Jan 2, 2018 9:02:41 PM",
-      "dateStarted": "Jan 22, 2018 8:31:30 PM",
-      "dateFinished": "Jan 22, 2018 8:32:30 PM",
+      "dateStarted": "Apr 17, 2018 4:42:21 PM",
+      "dateFinished": "Apr 17, 2018 4:43:55 PM",
       "status": "FINISHED",
-      "errorMessage": "",
       "progressUpdateIntervalMs": 500
     },
     {
@@ -1605,7 +1835,7 @@
         "truncated": false
       },
       "jobName": "paragraph_1516451852431_1661590422",
-      "id": "20180120-123732_1582133123_q_G5FRE4ZKXB1516650111",
+      "id": "20180120-123732_1582133123_q_J8JF4YMWE11523976828",
       "dateCreated": "Jan 20, 2018 12:37:32 PM",
       "dateStarted": "Jan 20, 2018 1:08:49 PM",
       "dateFinished": "Jan 20, 2018 1:09:40 PM",
@@ -1637,7 +1867,7 @@
         "forms": {}
       },
       "jobName": "paragraph_1516907775274_-1652286325",
-      "id": "20180125-191615_2051034891_q_G5FRE4ZKXB1516650111",
+      "id": "20180125-191615_2051034891_q_J8JF4YMWE11523976828",
       "result": {
         "code": "SUCCESS",
         "type": "HTML",
@@ -1678,7 +1908,7 @@
         "truncated": false
       },
       "jobName": "paragraph_1516452699798_-1760939868",
-      "id": "20180120-125139_1470837255_q_G5FRE4ZKXB1516650111",
+      "id": "20180120-125139_1470837255_q_J8JF4YMWE11523976828",
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
@@ -1691,17 +1921,17 @@
       "progressUpdateIntervalMs": 500
     }
   ],
-  "name": "NLP_PreProcessor",
-  "id": "G5FRE4ZKXB1516650111",
+  "name": "Matt",
+  "id": "J8JF4YMWE11523976828",
   "angularObjects": {
-    "2CZWJU1KG6631510262503868:shared_process": [],
-    "2CX6ZKXWX6631510262503831:shared_process": [],
-    "2D2QWKN8P6631515718565166:G5FRE4ZKXB1516650111": [],
-    "2CZXHXM1R6631510262503821:shared_process": []
+    "2D6SBQE5P9371517323942262:shared_process": [],
+    "2D69DB5ZB9371517323942259:shared_process": [],
+    "2DATXXMPR9371523633749619:shared_process": [],
+    "2D82B78129371517323942266:shared_process": []
   },
   "config": {
     "isDashboard": false
   },
   "info": {},
   "source": "FCN"
-}
+}
